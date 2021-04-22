@@ -20,9 +20,7 @@ span.addEventListener("click", function () {
 });
 
 var welcome = function (name) {
-    p.innerText = `Welcome, ${name}`;
-    var utterThis = new SpeechSynthesisUtterance(`Welcome, ${userName.value}!`);
+    p.innerText = `Welcome, ${name}!`;
+    var utterThis = new SpeechSynthesisUtterance(`Welcome, ${userName.value}! Are you ready to spell?`);
     synth.speak(utterThis);
-
-    
 }
