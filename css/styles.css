@@ -11,17 +11,22 @@ body {
     overflow: hidden;
     font-family: "Montserrat";
     font-weight: bold;
-    background-color: #f3dfde;
+    background-image: url(../img/letters.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;
     color: #fff;
     margin: 0;
     font-size: 16px;
 }
 
 .container {
+    background-color: rgba(255,255,255,.95);
     width: 90%;
     max-width: 550px;
     text-align: center;
     font-size: 1.5em;
+    padding: 50px;
 }
 
 p {
@@ -71,14 +76,16 @@ p {
 }
 
 input {
+    background-color: lightgray;
     padding: 16px 64px;
     border: none;
-    font-size: 14px;
+    font-size: 20px;
     font-family: "Montserrat";
+    text-align: center;
 }
 
 button {
-    background-color: #f16059;
+    background-color: royalblue;
     padding: 16px 64px;
     margin-top: 2em;
     outline: 0;
