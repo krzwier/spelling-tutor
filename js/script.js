@@ -36,7 +36,7 @@ input.addEventListener("keydown", function (e) {
 
 
 var checkUser = function (name) {
-    if (name === "Josh" || name === "Joshua" || name === "Claire" || name === "Ben" || name === "Benjamin" || name === "Hannah") {
+    if (name.toUpperCase() === "JOSH" || name.toUpperCase() === "JOSHUA" || name.toUpperCase() === "CLAIRE" || name.toUpperCase() === "BEN" || name.toUpperCase() === "BENJAMIN" || name.toUpperCase() === "BENJIE" || name.toUpperCase() === "HANNAH") {
         // console.log("Made it to checkUser function!");
         welcome(name);
     } else {
