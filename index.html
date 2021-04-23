@@ -13,20 +13,49 @@
 </head>
 
 <body>
-    <div class="welcome">
+    <div class="landing modal">
         <p>Hello there!<br />Who are you?</p>
 
         <input id="#name" placeholder="Type your name here"></input>
         <button id="#submit-name">Enter</button>
     </div>
 
-    <div class="quiz hide">
-        <div class="center-box">
-            <p>Welcome, user!</p>
+    <div class="sad modal hide">
+        <span class="modal-x"><i class="fas fa-times"></i></span>
 
+        <figure>
+            <img src="img/sad-face.gif" alt="Agnes with sad face" />
+        </figure>
+
+    </div>
+
+    <div class="entry modal hide">
+        <span class="modal-x"><i class="fas fa-times"></i></span>
+
+        <p>Welcome, user!</p>
+        <div>
             <button id="yes">Yes</button>
             <button id="no">No</button>
         </div>
+
+    </div>
+
+    <div class="tsk modal hide">
+        <span class="modal-x"><i class="fas fa-times"></i></span>
+
+        <figure>
+            <img src="img/shake-head.gif" alt="man shaking head" />
+        </figure>
+
+    </div>
+
+    <div class="quiz modal hide">
+        <span class="modal-x"><i class="fas fa-times"></i></span>
+
+        <p>Spelling Quiz</p>
+        <p>Word</p>
+        <input></input>
+
     </div>
 </body>
 

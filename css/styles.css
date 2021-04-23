@@ -20,24 +20,70 @@ body {
     font-size: 16px;
 }
 
-.welcome {
+.modal {
+    display: flex;
+    position: relative;
     background-color: rgba(255,255,255,.94);
-    width: 90%;
-    max-width: 550px;
-    text-align: center;
-
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
     padding: 50px;
+    max-width: 900px;
+    flex-flow: column nowrap;
+
+}
+
+.modal .modal-x {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 40px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #292929;
+    font-size: 1em;
+  }
+  
+  .modal .modal-x:hover {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+.modal.hide {
+    display: none;
+}
+
+.modal figure {
+    max-width: 80vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+}
+
+.modal.landing {
+    
+    max-width: 550px;
+    max-height: 450px;
+}
+
+.modal.entry {
+    max-width: 550px;
+    max-height: 450px;
 }
 
 p {
+    margin-top: 0;
     color: #292929;
     font-size: 3rem;
     line-height: 1.5;
+    text-align: center;
 }
 
-.hide {
-    display: none;
-}
+
 
 
 input {
@@ -75,20 +121,3 @@ button:focus {
     outline: 0;
 }
 
-.quiz {
-    position: relative;
-    z-index: 100;
-    background: #fff;
-    width: 80%;
-    height: 80%;
-    padding: auto;
-    border-radius: 10px;
-    
-    /* top: 50%; */
-
-}
-
-.quiz div {
-    text-align: center;
-    margin: auto auto;  
-}
