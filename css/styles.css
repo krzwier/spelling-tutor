@@ -20,60 +20,25 @@ body {
     font-size: 16px;
 }
 
-.container {
-    background-color: rgba(255,255,255,.95);
+.welcome {
+    background-color: rgba(255,255,255,.94);
     width: 90%;
     max-width: 550px;
     text-align: center;
-    font-size: 1.5em;
+
     padding: 50px;
 }
 
 p {
     color: #292929;
-    font-size: 2em;
+    font-size: 3rem;
     line-height: 1.5;
 }
 
-.modal {
+.hide {
     display: none;
-    position: relative;
-    background: #fff;
-    padding: 2em 1em 1em;
-    border-radius: 10px;
 }
 
-.modal img {
-    width: 80%;
-}
-
-.modal p {
-    font-size: 1em;
-}
-
-.modal.show-modal {
-    display: block;
-}
-
-.modal .modal-x {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: block;
-    width: 40px;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: #292929;
-    font-size: 0.5em;
-}
-
-.modal .modal-x:hover {
-    font-weight: bold;
-    font-size: 0.6em;
-}
 
 input {
     background-color: lightgray;
@@ -108,4 +73,22 @@ button:active {
 
 button:focus {
     outline: 0;
+}
+
+.quiz {
+    position: relative;
+    z-index: 100;
+    background: #fff;
+    width: 80%;
+    height: 80%;
+    padding: auto;
+    border-radius: 10px;
+    
+    /* top: 50%; */
+
+}
+
+.quiz div {
+    text-align: center;
+    margin: auto auto;  
 }
