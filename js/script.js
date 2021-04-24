@@ -1,6 +1,10 @@
 var synth = window.speechSynthesis;
 var utterThis = new SpeechSynthesisUtterance();
 
+var goofyList = [
+    "",
+    ""
+]
 var claireList = ["machinery", "ordinary", "scenery", "military", "stationery (as in writing paper)", "stationary, as in not moving"];
 var hannahList = ["a", "b", "c", "d", "e", "f", "g"];
 
