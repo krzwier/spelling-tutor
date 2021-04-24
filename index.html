@@ -30,7 +30,7 @@
 
             <h1>Welcome, user!</h1>
             <p>Are you ready to spell?</p>
-            <div class="two-buttons">
+            <div class="two-wide">
                 <button id="yes">Yes</button>
                 <button id="no">No</button>
             </div>
@@ -41,21 +41,19 @@
         <div class="modal-container">
             <span class="modal-x"><i class="fas fa-times"></i></span>
 
-            <figure>
-                <img src="img/sad-face.gif" alt="Agnes with sad face" />
-            </figure>
+            <img src="img/sad-face.gif" alt="Agnes with sad face" />
         </div>
     </div>
 
-    
+
 
     <div class="tsk modal hide">
         <div class="modal-container">
             <span class="modal-x"><i class="fas fa-times"></i></span>
 
-            <figure>
-                <img src="img/shake-head.gif" alt="man shaking head" />
-            </figure>
+
+            <img src="img/shake-head.gif" alt="man shaking head" />
+
         </div>
     </div>
 
@@ -65,18 +63,20 @@
 
             <h1>Spelling Quiz</h1>
 
+            <div class="two-wide">
+                <input id="guess"></input>
+                <button id="submit-guess"><i class="fas fa-arrow-right"></i></button>
+            </div>
 
-
-            <input></input>
-            <div>
-                <p>To repeat word, click here -></p>
-                <button><img id="voice" src="img/voice.png" alt="head speaking" /></button>
+            <div class="two-wide">
+                <p>Repeat word:</p>
+                <button id="speak-button"><img src="img/voice.png" alt="head speaking" /></button>
             </div>
 
             <div class="meter">
                 <span style="width: 0"></span>
             </div>
-            <p>Word</p>
+            <p id="num-words">Word</p>
 
             <div class="please modal hide box sb">
                 <h1>Wait, really?</h1>

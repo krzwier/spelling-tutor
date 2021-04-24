@@ -20,18 +20,26 @@ var benList =
     "buckle",
     "picnic"];
 
+var joshList = benList;
+
 
 /* GLOBAL VARIABLES AND FUNCTIONS */
 
 var synth = window.speechSynthesis;
 var utterThis = new SpeechSynthesisUtterance();
 var user = "user";
+var userPretty = "User";
+var list = [];
 
 var speak = function (message) {
     synth.cancel();
     utterThis = new SpeechSynthesisUtterance(message);
     synth.speak(utterThis);
 };
+
+var prettify = function (s) {
+    return s.charAt(0).toUpperCase() + s.toLowerCase().slice(1);
+}
 
 
 /* -----------------------------------------------
@@ -43,44 +51,48 @@ var landingButton = document.querySelector("button");
 var userName = document.querySelector("input");
 var landing = document.querySelector(".landing");
 var input = document.querySelector("input");
+var numWords = document.querySelector("#num-words");
 
 landingButton.addEventListener("click", function () {
-    checkUser(userName.value);
-    user = userName.value;
+    user = userName.value.toUpperCase();
+    userPretty = prettify(userName.value);
+    checkUser();
 });
 
 input.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-        checkUser(userName.value);
-        user = userName.value;
+        user = userName.value.toUpperCase();
+        userPretty = prettify(userName.value);
+        checkUser();
     }
 });
 
-var checkUser = function (name) {
-    if (name.toUpperCase() === "JOSH" || name.toUpperCase() === "JOSHUA" || name.toUpperCase() === "CLAIRE" || name.toUpperCase() === "BEN" || name.toUpperCase() === "BENJAMIN" || name.toUpperCase() === "BENJIE" || name.toUpperCase() === "HANNAH") {
-        // console.log("Made it to checkUser function!");
-        welcome(name);
+var checkUser = function () {
+    if (user === "JOSH" || user === "JOSHUA" || user === "CLAIRE" || user === "BEN" || user === "BENJAMIN" || user === "BENJIE" || user === "HANNAH") {
+        console.log("Made it to checkUser function!");
+        welcome();
+        
     } else {
-        noWelcome(name);
+        noWelcome();
 
     }
 };
 
-var welcome = function (name) {
+var welcome = function () {
 
     // console.log("made it to welcome function!");
-    entryTitle.innerHTML = `Welcome, ${name}!`;
+    entryTitle.innerHTML = `Welcome, ${userPretty}!`;
     landing.classList.add("hide");
     entry.classList.remove("hide");
-    speak(`Welcome, ${name}! Are you ready to spell?`);
+    speak(`Welcome, ${user}! Are you ready to spell?`);
 }
 
-var noWelcome = function (name) {
+var noWelcome = function () {
 
     // console.log("made it to welcome function!");
     landing.classList.add("hide");
     sad.classList.remove("hide");
-    speak(`Sorry, I don't recognize you, ${name}. I'm only allowed to tutor Claire, Josh, Ben, and Hannah in spelling. Too bad for you. You're really missing out on a spectacular spelling list.`);
+    speak(`Sorry, I don't recognize you, ${user}. I'm only allowed to tutor Claire, Josh, Ben, and Hannah in spelling. Too bad for you. You're really missing out on a spectacular spelling list.`);
 }
 
 
@@ -118,10 +130,12 @@ noButton.addEventListener("click", function () {
 });
 
 yesButton.addEventListener("click", function (name) {
-    speak(`Awesome! I have a super list for you!`);
     entry.classList.add("hide");
     quiz.classList.remove("hide");
-    quizTitle.innerText = `${user}'s Spelling Quiz`;
+    quizTitle.innerText = `${userPretty}'s Spelling Quiz`;
+    getList();
+    numWords.innerText = `Word 1 of ${list.length}`;
+    speak(`Awesome! I have a super list for you! Your first word is ${list[0]}.`);
 });
 
 entryX.addEventListener("click", function () {
@@ -130,6 +144,19 @@ entryX.addEventListener("click", function () {
     synth.cancel();
 });
 
+var getList = function () {
+    if (user === "CLAIRE") {
+        list = claireList;
+    } else if (user === "JOSHUA" || user === "JOSH") {
+        list = joshList;
+    } else if (user === "BENJAMIN" || user === "BENJIE" || user === "BEN"){
+        list = benList;
+    } else if (user === "HANNAH") {
+        list = hannahList;
+    } else {
+        console.log("No list to match user!");
+    }
+}
 
 /* -----------------------------------------------
 /* TSK PAGE 
@@ -154,12 +181,21 @@ tskX.addEventListener("click", function () {
 var quiz = document.querySelector(".quiz");
 var quizX = document.querySelector(".quiz .modal-x");
 var quizTitle = document.querySelector(".quiz h1");
-var please = document.querySelector(".please");
+var repeat = document.querySelector("#speak-button");
+var wordNum = 0;
 
 quizX.addEventListener("click", function () {
     speak("Are you sure you want to leave your quiz?");
     please.classList.remove("hide");
 });
+
+repeat.addEventListener("click", function() {
+    speak(list[wordNum]);
+});
+
+
+
+
 
 
 /* -----------------------------------------------
@@ -167,8 +203,7 @@ quizX.addEventListener("click", function () {
 /* opens when user tries to close quiz before finishing
 /* ----------------------------------------------- */
 
-
-
+var please = document.querySelector(".please");
 
 
 

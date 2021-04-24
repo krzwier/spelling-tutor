@@ -21,7 +21,7 @@ body {
     flex-flow: column nowrap;
     position: relative;
     background-color: rgba(255, 255, 255, .94);
-    border-radius: 10px;
+    border-radius: 20px;
     max-width: 90%;
 }
     
@@ -30,7 +30,7 @@ body {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    padding: 0 30px;
+    padding: 0;
     margin: 20px;
 }
 
@@ -58,24 +58,23 @@ body {
     display: none;
 }
 
-.modal figure {
-    width: 90%;
-}
-
-.modal figure img {
-    width: 100%;
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
 }
 
 h1 {
     margin-top: 0;
     color: #292929;
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 1.5;
     text-align: center;
 }
 
 p {
-    margin-top: 0;
+    margin: 0;
     color: #292929;
     font-size: 1.5rem;
     line-height: 1.5;
@@ -89,17 +88,17 @@ input {
     font-size: 1rem;
     font-family: "Montserrat";
     text-align: center;
-    margin-bottom: 1em;
+    margin: 1em 0;
 }
 
 button {
     background-color: royalblue;
     padding: 16px 32px;
-    margin: 0 1em;
+    margin: 1em;
     outline: 0;
     border: 0;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 1rem;
     font-family: "Montserrat";
     text-transform: uppercase;
     color: #fff;
@@ -118,11 +117,40 @@ button:focus {
     outline: 0;
 }
 
-.two-buttons {
+.two-wide {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+}
+
+.quiz h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.quiz p {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.quiz input {
+    padding: 16px;
+    width: calc(100% - 32px);
+}
+
+#submit-guess {
+    margin-right: 0;
+    padding: 16px;
+}
+
+#speak-button {
+    background: none;
+    padding: 0;
+    margin-left: 10px;
+    width: 25px;
+    border: 2px solid #292929;
+    border-radius: 5px;
 }
 
 .meter {
@@ -131,8 +159,8 @@ button:focus {
     position: relative;
     background: #555;
     border-radius: 25px;
-    margin: 20px;
-    padding: 10px;
+    margin: 5px 0;
+    /* padding: 10px; */
     box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
 }
 
@@ -150,39 +178,21 @@ button:focus {
     overflow: hidden;
 }
 
-.quiz p {
-    color: #292929;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1.5;
-    text-align: center;
-}
-
-.quiz button {
-    background: none;
-    padding: 0;
-    margin: 0;
-}
-
-#voice {
-    width: 50px;
-}
 
 
-.modal.please {
+
+
+
+.please {
     position: absolute;
     top: 30px;
     right: 50px;
-    /* width: 50%; */
     max-width: 80%;
     max-height: 90%;
-
-    /* padding: 10px; */
     background: #00bfb6;
     color: #fff;
     padding: 20px;
-    
-    border-radius: 15px;
+    border-radius: 20px;
 }
 
 .sb:before {
