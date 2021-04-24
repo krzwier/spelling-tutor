@@ -13,8 +13,10 @@
 </head>
 
 <body>
+    <!-- <div id="background"></div> -->
     <div class="landing modal">
-        <p>Hello there!<br />Who are you?</p>
+        <h1>Hello there!</h1>
+        <p>Who are you?</p>
 
         <input id="#name" placeholder="Type your name here"></input>
         <button id="#submit-name">Enter</button>
@@ -52,11 +54,37 @@
     <div class="quiz modal hide">
         <span class="modal-x"><i class="fas fa-times"></i></span>
 
-        <p>Spelling Quiz</p>
-        <p>Word</p>
+        <h1>Spelling Quiz</h1>
+
+
+
         <input></input>
+        <div>
+            <p>To repeat word, click here -></p>
+            <button><img id="voice" src="img/voice.png" alt="head speaking" /></button>
+        </div>
+
+        <div class="meter">
+            <span style="width: 0"></span>
+        </div>
+        <p>Word</p>
+
+        <div class="please modal hide box sb">
+            <h1>Wait, really?</h1>
+
+            <img src="img/please.gif" alt="Puss in boots begging with his eyes" />
+
+            <div>
+                <button id="yes-close">Yes</button>
+                <button id="no-close">No</button>
+            </div>
+
+        </div>
 
     </div>
+
+
+
 </body>
 
 </html>

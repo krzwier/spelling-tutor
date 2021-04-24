@@ -19,18 +19,24 @@ var entryX = document.querySelector(".entry .modal-x");
 var tskX = document.querySelector(".tsk .modal-x");
 var sadX = document.querySelector(".sad .modal-x");
 var quizX = document.querySelector(".quiz .modal-x");
+var quizTitle = document.querySelector(".quiz h1");
+var please = document.querySelector(".please");
+var bkgrd = document.querySelector("#background");
 
 
+var user = "User";
 
 
 
 button.addEventListener("click", function () {
     checkUser(userName.value);
+    user = userName.value;
 });
 
 input.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
         checkUser(userName.value);
+        user = userName.value;
     }
 });
 
@@ -79,30 +85,32 @@ yesButton.addEventListener("click", function (name) {
     speak(`Awesome! I have a super list for you!`);
     entry.classList.add("hide");
     quiz.classList.remove("hide");
+    quizTitle.innerText = `${user}'s Spelling Quiz`;
 });
 
 tskX.addEventListener("click", function () {
-
     tsk.classList.add("hide");
     entry.classList.remove("hide");
-
     synth.cancel();
 });
 
 entryX.addEventListener("click", function () {
-
     entry.classList.add("hide");
     landing.classList.remove("hide");
-
     synth.cancel();
 });
 
 sadX.addEventListener("click", function () {
-
     sad.classList.add("hide");
     landing.classList.remove("hide");
-
     synth.cancel();
+});
+
+quizX.addEventListener("click", function () {
+    speak("Are you sure you want to leave your quiz?");
+    please.classList.remove("hide");
+    
+    
 });
 
 

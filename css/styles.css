@@ -23,14 +23,13 @@ body {
 .modal {
     display: flex;
     position: relative;
-    background-color: rgba(255,255,255,.94);
+    background-color: rgba(255, 255, 255, .94);
     border-radius: 10px;
     justify-content: center;
     align-items: center;
     padding: 50px;
     max-width: 900px;
     flex-flow: column nowrap;
-
 }
 
 .modal .modal-x {
@@ -46,12 +45,12 @@ body {
     cursor: pointer;
     color: #292929;
     font-size: 1em;
-  }
-  
-  .modal .modal-x:hover {
+}
+
+.modal .modal-x:hover {
     font-weight: bold;
     font-size: 1.2em;
-  }
+}
 
 .modal.hide {
     display: none;
@@ -65,7 +64,6 @@ body {
 }
 
 .modal.landing {
-    
     max-width: 550px;
     max-height: 450px;
 }
@@ -75,7 +73,7 @@ body {
     max-height: 450px;
 }
 
-p {
+h1 {
     margin-top: 0;
     color: #292929;
     font-size: 3rem;
@@ -83,8 +81,13 @@ p {
     text-align: center;
 }
 
-
-
+p {
+    margin-top: 0;
+    color: #292929;
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: center;
+}
 
 input {
     background-color: lightgray;
@@ -98,7 +101,7 @@ input {
 button {
     background-color: royalblue;
     padding: 16px 64px;
-    margin-top: 2em;
+    margin: 2em 1em 0 1em;
     outline: 0;
     border: 0;
     cursor: pointer;
@@ -121,3 +124,94 @@ button:focus {
     outline: 0;
 }
 
+.meter {
+    height: 20px;
+    width: 100%;
+    position: relative;
+    background: #555;
+    border-radius: 25px;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.meter>span {
+    display: block;
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(43, 194, 83);
+    background-image: linear-gradient( center bottom, rgb(43, 194, 83) 37%, rgb(84, 240, 84) 69%);
+    box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz p {
+    color: #292929;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.quiz > button {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+#voice {
+    width: 50px;
+}
+
+.greyout {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: rgba(211, 211, 211, 0.8);
+    z-index: 10;
+}
+
+.modal.please {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    /* width: 50%; */
+    max-width: 80%;
+    max-height: 90%;
+
+    /* padding: 10px; */
+    background: #00bfb6;
+    color: #fff;
+    padding: 20px;
+    
+    border-radius: 15px;
+}
+
+.sb:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 15px solid #00bfb6;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #00bfb6;
+    border-bottom: 15px solid transparent;
+    right: -16px;
+    top: 0px;
+}
+
+.modal.please img {
+    width: 100%;
+}
+
+.modal.please h1 {
+    font-size: 1.5rem;
+}
+
+.modal.please button {
+    padding: 16px 30px;
+}
