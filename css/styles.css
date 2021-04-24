@@ -1,35 +1,37 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
     display: flex;
-    flex-direction: column;
+    /* flex-flow: column nowrap; */
     align-items: center;
     justify-content: center;
     height: 100vh;
-    overflow: hidden;
+    width: 100vw;
+    /* overflow: hidden; */
     font-family: "Montserrat";
     font-weight: bold;
-    background-image: url(../img/letters.jpg);
+    background: url(../img/letters.jpg) center no-repeat;
     background-size: cover;
-    background-position: center;
-    background-repeat: none;
-    color: #fff;
     margin: 0;
     font-size: 16px;
 }
 
 .modal {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
     position: relative;
     background-color: rgba(255, 255, 255, .94);
     border-radius: 10px;
+    max-width: 90%;
+}
+    
+.modal .modal-container {
+    display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    padding: 50px;
-    max-width: 900px;
-    flex-flow: column nowrap;
+    padding: 0 30px;
+    margin: 20px;
 }
 
 .modal .modal-x {
@@ -57,26 +59,17 @@ body {
 }
 
 .modal figure {
-    max-width: 80vw;
-    max-height: 80vh;
-    width: auto;
-    height: auto;
+    width: 90%;
 }
 
-.modal.landing {
-    max-width: 550px;
-    max-height: 450px;
-}
-
-.modal.entry {
-    max-width: 550px;
-    max-height: 450px;
+.modal figure img {
+    width: 100%;
 }
 
 h1 {
     margin-top: 0;
     color: #292929;
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 1.5;
     text-align: center;
 }
@@ -84,24 +77,25 @@ h1 {
 p {
     margin-top: 0;
     color: #292929;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.5;
     text-align: center;
 }
 
 input {
     background-color: lightgray;
-    padding: 16px 64px;
+    padding: 16px 32px;
     border: none;
-    font-size: 20px;
+    font-size: 1rem;
     font-family: "Montserrat";
     text-align: center;
+    margin-bottom: 1em;
 }
 
 button {
     background-color: royalblue;
-    padding: 16px 64px;
-    margin: 2em 1em 0 1em;
+    padding: 16px 32px;
+    margin: 0 1em;
     outline: 0;
     border: 0;
     cursor: pointer;
@@ -122,6 +116,13 @@ button:active {
 
 button:focus {
     outline: 0;
+}
+
+.two-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .meter {
@@ -157,7 +158,7 @@ button:focus {
     text-align: center;
 }
 
-.quiz > button {
+.quiz button {
     background: none;
     padding: 0;
     margin: 0;
@@ -167,13 +168,6 @@ button:focus {
     width: 50px;
 }
 
-.greyout {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    background-color: rgba(211, 211, 211, 0.8);
-    z-index: 10;
-}
 
 .modal.please {
     position: absolute;
