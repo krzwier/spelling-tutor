@@ -23,6 +23,8 @@ body {
     background-color: rgba(255, 255, 255, .94);
     border-radius: 20px;
     max-width: 90%;
+    width: 600px;
+    height: 400px;
 }
     
 .modal .modal-container {
@@ -208,6 +210,11 @@ button:focus {
     top: 0px;
 }
 
+.modal.please {
+    width: 60%;
+    padding: 60px 0;
+}
+
 .modal.please img {
     width: 100%;
 }
@@ -219,3 +226,4 @@ button:focus {
 .modal.please button {
     padding: 16px 30px;
 }
+

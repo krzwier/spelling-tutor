@@ -1,24 +1,43 @@
 /* SPELLING LISTS */
 
-const claireList =
-    ["machinery",
-        "ordinary",
-        "scenery",
-        "military",
-        "stationery (as in writing paper)",
-        "stationary, as in not moving"];
+const claireList = [
+    "fictional",
+    "poetic",
+    "accidental",
+    "tutorial",
+    "heroic",
+    "patriotic",
+    "musical",
+    "editorial",
+    "burial",
+    "colonial",
+    "comical",
+    "industrial",
+    "arrival",
+    "memorial",
+    "Islamic",
+    "alphabetic",
+    "logical",
+    "betrayal",
+    "coastal",
+    "global",
+    "rhythmic",
+    "angelic",
+    "dramatic",
+    "magnetic",
+    "territorial"];
 
 const hannahList = ["a", "b", "c", "d", "e", "f", "g"];
 
-const benList = 
+const benList =
     ["traffic",
-    "panic",
-    "frantic",
-    "stomach",
-    "nickel",
-    "pickle",
-    "buckle",
-    "picnic"];
+        "panic",
+        "frantic",
+        "stomach",
+        "nickel",
+        "pickle",
+        "buckle",
+        "picnic"];
 
 const joshList = benList;
 
@@ -32,7 +51,7 @@ let userPretty = "User";
 let list = [];
 
 const speak = function (message) {
-    synth.cancel();
+    //synth.cancel();
     utterThis = new SpeechSynthesisUtterance(message);
     synth.speak(utterThis);
 };
@@ -71,7 +90,7 @@ const checkUser = function () {
     if (user === "JOSH" || user === "JOSHUA" || user === "CLAIRE" || user === "BEN" || user === "BENJAMIN" || user === "BENJIE" || user === "HANNAH") {
         console.log("Made it to checkUser function!");
         welcome();
-        
+
     } else {
         noWelcome();
 
@@ -117,6 +136,7 @@ const entryX = document.querySelector(".entry .modal-x");
 const entryTitle = document.querySelector(".entry h1");
 const yesButton = document.querySelector("#yes");
 const noButton = document.querySelector("#no");
+let totalWords = 0;
 
 noButton.addEventListener("click", function () {
     entry.classList.add("hide");
@@ -130,8 +150,15 @@ yesButton.addEventListener("click", function (name) {
     quiz.classList.remove("hide");
     quizTitle.innerText = `${userPretty}'s Spelling Quiz`;
     getList();
-    numWords.innerText = `Word 1 of ${list.length}`;
-    speak(`Awesome! I have a super list for you! Your first word is ${list[0]}.`);
+    numWords.innerText = `Word 1 of ${totalWords}`;
+    speak(`Awesome! I have a super list for you!`);
+    // while (synth.speaking) {
+    //     setTimeout(function(){}, 1000);
+    //     console.log("Timeout");
+    // }
+    setTimeout(function(){}, 1000);
+    console.log("made it past delay");
+    speakWord();
 });
 
 entryX.addEventListener("click", function () {
@@ -145,13 +172,15 @@ const getList = function () {
         list = claireList;
     } else if (user === "JOSHUA" || user === "JOSH") {
         list = joshList;
-    } else if (user === "BENJAMIN" || user === "BENJIE" || user === "BEN"){
+    } else if (user === "BENJAMIN" || user === "BENJIE" || user === "BEN") {
         list = benList;
     } else if (user === "HANNAH") {
         list = hannahList;
     } else {
         console.log("No list to match user!");
+        return;
     }
+    totalWords = list.length;
 }
 
 /* -----------------------------------------------
@@ -178,16 +207,78 @@ const quiz = document.querySelector(".quiz");
 const quizX = document.querySelector(".quiz .modal-x");
 const quizTitle = document.querySelector(".quiz h1");
 const repeat = document.querySelector("#speak-button");
-let wordNum = 0;
+const submit = document.querySelector("#submit-guess");
+const guess = document.querySelector("#guess");
+const meter = document.querySelector(".meter>span");
+
+let currentWord = "default";
+let wordNum = 1;
+
 
 quizX.addEventListener("click", function () {
     speak("Are you sure you want to leave your quiz?");
     please.classList.remove("hide");
 });
 
-repeat.addEventListener("click", function() {
-    speak(list[wordNum]);
+repeat.addEventListener("click", function () {
+    speak(currentWord);
 });
+
+const speakWord = function () {
+    if (list.length === totalWords) {
+        console.log("list length is equal to total words");
+        currentWord = getWord();
+        speak(`Your first word is, ${currentWord}.`)
+    } else if (list.length > 0) {
+        currentWord = getWord();
+        speak(`The next word is, ${currentWord}.`);
+    } else {
+        speak("You've completed your quiz!  Well done!");
+    }
+
+}
+
+const getWord = function () {
+    const randomIndex = Math.floor(Math.random() * list.length);
+    const randomWord = list[randomIndex];
+    list.splice(randomIndex, 1);
+    return randomWord;
+}
+
+submit.addEventListener("click", function () {
+    checkGuess();
+});
+
+guess.addEventListener("keydown", function(e) {
+    console.log(e);
+    if (e.key === "Enter") {
+        checkGuess();
+    }
+});
+
+const checkGuess = function () {
+    if (currentWord === guess.value) {
+        speak("Correct!");
+        wordNum++;
+        adjustProgress();
+        speakWord();
+    } else {
+        speak("Sorry, that's incorrect.  Try again!");
+        speak(`The word is ${currentWord}.`);
+    }
+}
+
+const adjustProgress = function () {
+    if (wordNum <= totalWords) {
+        meter.style.width = `${((wordNum - 1) / totalWords) * 100}%`;
+        numWords.innerText = `Word ${wordNum} of ${totalWords}`;
+    } else {
+        meter.style.width = `${((wordNum - 1) / totalWords) * 100}%`;
+        numWords.innerText = `All done!`;
+    }
+    
+};
+
 
 
 
@@ -200,6 +291,18 @@ repeat.addEventListener("click", function() {
 /* ----------------------------------------------- */
 
 const please = document.querySelector(".please");
+const yesClose = document.querySelector("#yes-close");
+const noClose = document.querySelector("#no-close");
+
+yesClose.addEventListener("click", function() {
+    please.classList.add("hide");
+    quiz.classList.add("hide");
+    landing.classList.remove("hide");
+});
+
+noClose.addEventListener("click", function() {
+    please.classList.add("hide");
+});
 
 
 
