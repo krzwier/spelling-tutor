@@ -29,23 +29,62 @@ const claireList = [
 
 const hannahList = ["a", "b", "c", "d", "e", "f", "g"];
 
-const benList =
-    ["traffic",
-        "panic",
-        "frantic",
-        "stomach",
-        "nickel",
-        "pickle",
-        "buckle",
-        "picnic"];
+const benList = [
+    "grab",
+    "star",
+    "frog",
+    "fork",
+    "scar",
+    "corn",
+    "crop",
+    "track",
+    "barn",
+    "cord",
+    "war",
+    "trot",
+    "scarf",
+    "charm",
+    "trap",
+    "cram",
+    "horn",
+    "cork",
+    "dart",
+    "craft",
+    "mark",
+    "short",
+    "prop",
+    "brag"];
 
-const joshList = benList;
+const joshList = [
+    "squirrel",
+    "quiver",
+    "squirm",
+    "squeaky",
+    "question",
+    "quaint",
+    "quarrel",
+    "equal",
+    "request",
+    "tranquil",
+    "sequence",
+    "banquet",
+    "frequent",
+    "sequel",
+    "inquire",
+    "liquid",
+    "antique",
+    "technique",
+    "conquer",
+    "unique",
+    "mosque"
+];
 
 
 /* GLOBAL VARIABLES AND FUNCTIONS */
 
 const synth = window.speechSynthesis;
 let utterThis = new SpeechSynthesisUtterance();
+// utterThis.rate = 0.1;
 let user = "user";
 let userPretty = "User";
 let list = [];
@@ -53,6 +92,7 @@ let list = [];
 const speak = function (message) {
     //synth.cancel();
     utterThis = new SpeechSynthesisUtterance(message);
+    utterThis.rate = 0.8;
     synth.speak(utterThis);
 };
 
@@ -98,6 +138,7 @@ const checkUser = function () {
 };
 
 const welcome = function () {
+    userName.value = "";
     entryTitle.innerHTML = `Welcome, ${userPretty}!`;
     landing.classList.add("hide");
     entry.classList.remove("hide");
@@ -105,6 +146,7 @@ const welcome = function () {
 }
 
 const noWelcome = function () {
+    userName.value = "";
     landing.classList.add("hide");
     sad.classList.remove("hide");
     speak(`Sorry, I don't recognize you, ${user}. I'm only allowed to tutor Claire, Josh, Ben, and Hannah in spelling. Too bad for you. You're really missing out on a spectacular spelling list.`);
@@ -150,13 +192,13 @@ yesButton.addEventListener("click", function (name) {
     quiz.classList.remove("hide");
     quizTitle.innerText = `${userPretty}'s Spelling Quiz`;
     getList();
-    numWords.innerText = `Word 1 of ${totalWords}`;
+    resetProgress();
     speak(`Awesome! I have a super list for you!`);
     // while (synth.speaking) {
     //     setTimeout(function(){}, 1000);
     //     console.log("Timeout");
     // }
-    setTimeout(function(){}, 1000);
+    setTimeout(function () { }, 1000);
     console.log("made it past delay");
     speakWord();
 });
@@ -166,6 +208,12 @@ entryX.addEventListener("click", function () {
     landing.classList.remove("hide");
     synth.cancel();
 });
+
+const resetProgress = function () {
+        meter.style.width = `0`;
+        numWords.innerText = `Word ${wordNum} of ${totalWords}`;
+
+};
 
 const getList = function () {
     if (user === "CLAIRE") {
@@ -249,7 +297,7 @@ submit.addEventListener("click", function () {
     checkGuess();
 });
 
-guess.addEventListener("keydown", function(e) {
+guess.addEventListener("keydown", function (e) {
     console.log(e);
     if (e.key === "Enter") {
         checkGuess();
@@ -259,6 +307,7 @@ guess.addEventListener("keydown", function(e) {
 const checkGuess = function () {
     if (currentWord === guess.value) {
         speak("Correct!");
+        guess.value = "";
         wordNum++;
         adjustProgress();
         speakWord();
@@ -276,7 +325,7 @@ const adjustProgress = function () {
         meter.style.width = `${((wordNum - 1) / totalWords) * 100}%`;
         numWords.innerText = `All done!`;
     }
-    
+
 };
 
 
@@ -294,15 +343,16 @@ const please = document.querySelector(".please");
 const yesClose = document.querySelector("#yes-close");
 const noClose = document.querySelector("#no-close");
 
-yesClose.addEventListener("click", function() {
+yesClose.addEventListener("click", function () {
     please.classList.add("hide");
     quiz.classList.add("hide");
     landing.classList.remove("hide");
 });
 
-noClose.addEventListener("click", function() {
+noClose.addEventListener("click", function () {
     please.classList.add("hide");
 });
+
 
 
 
