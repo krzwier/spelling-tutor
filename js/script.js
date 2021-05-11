@@ -26,56 +26,87 @@ const claireList = [
     "apologize",
     "paralyze"];
 
-const hannahList = ["a", "b", "c", "d", "e", "f", "g"];
+const hannahList = ["a", "b", "c"];
+
+
 
 const benList = [
-    "grab",
-    "star",
-    "frog",
-    "fork",
-    "scar",
-    "corn",
-    "crop",
-    "track",
-    "barn",
-    "cord",
-    "war",
-    "trot",
-    "scarf",
-    "charm",
-    "trap",
-    "cram",
-    "horn",
-    "cork",
-    "dart",
-    "craft",
-    "mark",
-    "short",
-    "prop",
-    "brag"];
+    "care",
+    "hair",
+    "part",
+    "fair",
+    "start",
+    "harm",
+    "rare",
+    "chair",
+    "spare",
+    "sharp",
+    "pair",
+    "stare",
+    "chart",
+    "dark",
+    "square",
+    "hare",
+    "pear",
+    "heart",
+    "shark",
+    "fare",
+    "bear",
+    "stair",
+    "bare"
+];
+
+const benReadingList = [
+    "care",
+    "hair. I have hair on my head.",
+    "part",
+    "fair. The rules of the game were fair.",
+    "start",
+    "harm",
+    "rare",
+    "chair",
+    "spare",
+    "sharp",
+    "pair. I have a great pair of shoes.",
+    "stare. It makes me uncomfortable when you stare.",
+    "chart",
+    "dark",
+    "square",
+    "hare. There was a race between the tortoise and the hare.",
+    "pear. I'd love to eat a pear.",
+    "heart",
+    "shark",
+    "fare. Please pay the fare before passing through the gate.",
+    "bear. I was walking through the woods and I saw a bear!",
+    "stair. You need to go up the stair and then turn right.",
+    "bare. After I shaved my head, it was bare!"
+];
 
 const joshList = [
-    "squirrel",
-    "quiver",
-    "squirm",
-    "squeaky",
-    "question",
-    "quaint",
-    "quarrel",
-    "equal",
-    "request",
-    "tranquil",
-    "sequence",
-    "banquet",
-    "frequent",
-    "sequel",
-    "inquire",
-    "liquid",
-    "antique",
-    "technique",
-    "conquer",
-    "unique",
-    "mosque"
+    "castle",
+    "design",
+    "wrinkle",
+    "honest",
+    "through",
+    "knuckle",
+    "bought",
+    "whistle",
+    "honor",
+    "moisten",
+    "resign",
+    "wrestle",
+    "rhyme",
+    "listen",
+    "thought",
+    "often",
+    "brought",
+    "knowledge",
+    "wreckage",
+    "soften",
+    "rhythm",
+    "assign",
+    "though",
+    "answer"
 ];
 
 
@@ -182,6 +213,7 @@ let wordNum = 1;
 noButton.addEventListener("click", function () {
     entry.classList.add("hide");
     tsk.classList.remove("hide");
+    synth.cancel();
     speak(`Well, you'd better get ready, because your mama told me that you need to practice your spelling! How about you pick a different answer?`);
 
 });
@@ -189,6 +221,7 @@ noButton.addEventListener("click", function () {
 yesButton.addEventListener("click", function (name) {
     entry.classList.add("hide");
     quiz.classList.remove("hide");
+    synth.cancel();
     quizTitle.innerText = `${userPretty}'s Spelling Quiz`;
     getList();
     resetProgress();
@@ -213,12 +246,16 @@ const resetProgress = function () {
 const getList = function () {
     if (user === "CLAIRE") {
         list = [...claireList];
+        readingList = [...claireList];
     } else if (user === "JOSHUA" || user === "JOSH") {
         list = [...joshList];
+        readingList = [...joshList];
     } else if (user === "BENJAMIN" || user === "BENJIE" || user === "BEN") {
         list = [...benList];
+        readingList = [...benReadingList];
     } else if (user === "HANNAH") {
         list = [...hannahList];
+        readingList = [...hannahList];
     } else {
         console.log("No list to match user!");
         return;
@@ -255,6 +292,7 @@ const guess = document.querySelector("#guess");
 const meter = document.querySelector(".meter>span");
 
 let currentWord = "default";
+let currentSpokenWord = "default";
 
 
 
@@ -264,37 +302,62 @@ quizX.addEventListener("click", function () {
 });
 
 repeat.addEventListener("click", function () {
-    speak(currentWord);
+    synth.cancel();
+    speak(currentSpokenWord);
 });
 
-const speakWord = function () {
+const speakWord = async function () {
     if (list.length === totalWords) {
         
-        currentWord = getWord();
-        speak(`Your first word is, ${currentWord}.`)
+        getWord();
+        speak(`Your first word is, ${currentSpokenWord}.`)
     } else if (list.length > 0) {
-        currentWord = getWord();
-        speak(`The next word is, ${currentWord}.`);
+        getWord();
+        speak(`The next word is, ${currentSpokenWord}.`);
     } else {
-
+        quiz.classList.add("hide");
+        await getCongratsGif();
+        congrats.classList.remove("hide");
         speak("You've completed your quiz!  Well done!");
     }
+
+}
+
+const getCongratsGif = async function () {
+    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=celebrate&limit=25&offset=0&rating=g&lang=en");
+    const list = await jsonFile.json();
+    const randomIndex = Math.floor(Math.random() * 25);
+    const gifArray = list.data;
+    // console.log(list);
+    // console.log(gifArray);
+    const gif = gifArray[randomIndex];
+    const gifURL = gif.images.downsized.url;
+    const congratsImg = document.querySelector(".congrats img");
+    congratsImg.src = gifURL;
+
 
 }
 
 const getWord = function () {
     const randomIndex = Math.floor(Math.random() * list.length);
     const randomWord = list[randomIndex];
+    const randomSpokenWord = readingList[randomIndex];
     list.splice(randomIndex, 1);
-    return randomWord;
+    readingList.splice(randomIndex, 1);
+    currentWord = randomWord;
+    currentSpokenWord = randomSpokenWord;
 }
 
+
+
 submit.addEventListener("click", function () {
+    synth.cancel();
     checkGuess();
 });
 
 guess.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
+        synth.cancel();
         checkGuess();
     }
 });
@@ -308,7 +371,7 @@ const checkGuess = function () {
         speakWord();
     } else {
         speak("Sorry, that's incorrect.  Try again!");
-        speak(`The word is ${currentWord}.`);
+        speak(`The word is ${currentSpokenWord}.`);
     }
 }
 
@@ -342,13 +405,29 @@ yesClose.addEventListener("click", function () {
     please.classList.add("hide");
     quiz.classList.add("hide");
     landing.classList.remove("hide");
+    synth.cancel();
 });
 
 noClose.addEventListener("click", function () {
     please.classList.add("hide");
+    synth.cancel();
 });
 
 
+/* -----------------------------------------------
+/* CONGRATS POP-UP 
+/* opens when user successfully finishes quiz
+/* ----------------------------------------------- */
+
+
+const congrats = document.querySelector(".congrats");
+const congratsX = document.querySelector(".congrats .modal-x");
+
+congratsX.addEventListener("click", function () {
+    congrats.classList.add("hide");
+    landing.classList.remove("hide");
+    synth.cancel();
+});
 
 
 
