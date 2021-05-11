@@ -19,8 +19,52 @@
             <h1>Hello there!</h1>
             <p>Who are you?</p>
 
-            <input id="#name" spellcheck="false" placeholder="Type your name here"></input>
-            <button id="#submit-name">Enter</button>
+            <input id="name" spellcheck="false" placeholder="Type your name here"></input>
+            <button id="submit-name">Enter</button>
+            <button id="speech-settings"><i class="fas fa-cog"></i> Speech Settings</button>
+        </div>
+    </div>
+
+    <div class="settings modal hide">
+        <div class="modal-container">
+            <span class="modal-x"><i class="fas fa-times"></i></span>
+            <h1>Speech Settings</h1>
+
+            <form>
+                <div>
+                    <div class="slider">
+
+                        <label for="rate">Rate:</label>
+
+
+                        <input class="range" type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+                        <div class="rate-value">1</div>
+
+
+                    </div>
+                    <div class="slider">
+
+                        <label for="pitch">Pitch:</label>
+
+
+                        <input class="range" type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+                        <div class="pitch-value">1</div>
+
+                    </div>
+
+                    <select>
+
+                    </select>
+                </div>
+                <div class="controls">
+                    <button id="play" type="submit">Play</button>
+                </div>
+            </form>
+
+            <button id="ok">OK</button>
+
+
+
         </div>
     </div>
 

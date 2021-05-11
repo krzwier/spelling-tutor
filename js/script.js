@@ -1,30 +1,29 @@
 /* SPELLING LISTS */
 
 const claireList = [
-    "frighten",
-    "capitalize",
-    "classify",
-    "civilize",
-    "straighten",
-    "analyze",
-    "diversify",
-    "symbolize",
-    "dampen",
-    "sweeten",
-    "falsify",
-    "idolize",
-    "visualize",
-    "lengthen",
-    "beautify",
-    "simplify",
-    "energize",
-    "purify",
-    "harmonize",
-    "sharpen",
-    "memorize",
-    "summarize",
-    "apologize",
-    "paralyze"];
+    "collect",
+    "collection",
+    "express",
+    "expression",
+    "protect",
+    "protection",
+    "discuss",
+    "discussion",
+    "subtract",
+    "subtraction",
+    "select",
+    "selection",
+    "impress",
+    "impression",
+    "connect",
+    "connection",
+    "opress",
+    "opression",
+    "possess",
+    "possession",
+    "confess",
+    "confession"
+];
 
 const hannahList = ["a", "b", "c"];
 
@@ -112,19 +111,12 @@ const joshList = [
 
 /* GLOBAL VARIABLES AND FUNCTIONS */
 
-const synth = window.speechSynthesis;
-let utterThis = new SpeechSynthesisUtterance();
-// utterThis.rate = 0.1;
+
+
 let user = "user";
 let userPretty = "User";
-let list = [];
 
-const speak = function (message) {
-    //synth.cancel();
-    utterThis = new SpeechSynthesisUtterance(message);
-    utterThis.rate = 0.9;
-    synth.speak(utterThis);
-};
+let list = [];
 
 const prettify = function (s) {
     return s.charAt(0).toUpperCase() + s.toLowerCase().slice(1);
@@ -136,7 +128,8 @@ const prettify = function (s) {
 /* (+ related variables and functions)
 /* ----------------------------------------------- */
 
-const landingButton = document.querySelector("button");
+const landingButton = document.querySelector("#submit-name");
+const settingsButton = document.querySelector("#speech-settings");
 const userName = document.querySelector("input");
 const landing = document.querySelector(".landing");
 const input = document.querySelector("input");
@@ -146,6 +139,11 @@ landingButton.addEventListener("click", function () {
     user = userName.value.toUpperCase();
     userPretty = prettify(userName.value);
     checkUser();
+});
+
+settingsButton.addEventListener("click", function () {
+    landing.classList.add("hide");
+    settings.classList.remove("hide");
 });
 
 input.addEventListener("keydown", function (e) {
@@ -260,7 +258,7 @@ const getList = function () {
         console.log("No list to match user!");
         return;
     }
-        
+
 }
 
 /* -----------------------------------------------
@@ -308,7 +306,7 @@ repeat.addEventListener("click", function () {
 
 const speakWord = async function () {
     if (list.length === totalWords) {
-        
+
         getWord();
         speak(`Your first word is, ${currentSpokenWord}.`)
     } else if (list.length > 0) {
@@ -430,6 +428,109 @@ congratsX.addEventListener("click", function () {
 });
 
 
+/* -----------------------------------------------
+/* SPEECH SETTINGS WINDOW
+/* opens from landing page, allows user to choose voice
+/* ----------------------------------------------- */
+
+const settings = document.querySelector('.settings');
+const settingsX = document.querySelector('.settings .modal-x');
+var inputForm = document.querySelector('form');
+var voiceSelect = document.querySelector('select');
+
+var pitch = document.querySelector('#pitch');
+var pitchValue = document.querySelector('.pitch-value');
+var rate = document.querySelector('#rate');
+var rateValue = document.querySelector('.rate-value');
+
+let voices = [];
+
+const synth = window.speechSynthesis;
+let utterThis = new SpeechSynthesisUtterance();
+populateVoiceList();
+let voiceRate = 1;
+let voicePitch = 1;
+let voice = voices[0];
+
+const speak = function (message) {
+    //synth.cancel();
+    utterThis = new SpeechSynthesisUtterance(message);
+    utterThis.rate = voiceRate;
+    utterThis.pitch = voicePitch;
+    utterThis.voice = voice;
+    synth.speak(utterThis);
+};
+
+
+settingsX.addEventListener("click", function () {
+    settings.classList.add("hide");
+    landing.classList.remove("hide");
+    synth.cancel();
+});
+
+function populateVoiceList() {
+
+    voices = synth.getVoices().filter(function (v) {
+        if (v.lang.includes("en")) {
+            return v;
+        }
+    });
+    //   voices = synth.getVoices().sort(function (a, b) {
+    //       const aname = a.name.toUpperCase(), bname = b.name.toUpperCase();
+    //       if ( aname < bname ) return -1;
+    //       else if ( aname == bname ) return 0;
+    //       else return +1;
+    //   });
+    var selectedIndex = voiceSelect.selectedIndex < 0 ? 0 : voiceSelect.selectedIndex;
+    voiceSelect.innerHTML = '';
+    for (i = 0; i < voices.length; i++) {
+        var option = document.createElement('option');
+        option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+
+        if (voices[i].default) {
+            option.textContent += ' -- DEFAULT';
+        }
+
+        option.setAttribute('data-lang', voices[i].lang);
+        option.setAttribute('data-name', voices[i].name);
+        voiceSelect.appendChild(option);
+    }
+    voiceSelect.selectedIndex = selectedIndex;
+}
+
+if (speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = populateVoiceList;
+}
+
+inputForm.onsubmit = function (event) {
+    event.preventDefault();
+    synth.cancel();
+    var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
+    for (i = 0; i < voices.length; i++) {
+        if (voices[i].name === selectedOption) {
+            voice = voices[i];
+            break;
+        }
+    }
+    voicePitch = pitch.value;
+    voiceRate = rate.value;
+
+    speak("Would you like me to speak to you in this voice?");
+
+    inputTxt.blur();
+}
+
+pitch.onchange = function () {
+    pitchValue.textContent = pitch.value;
+}
+
+rate.onchange = function () {
+    rateValue.textContent = rate.value;
+}
+
+voiceSelect.onchange = function () {
+    speak("Would you like me to speak to you in this voice?");
+}
 
 
 
