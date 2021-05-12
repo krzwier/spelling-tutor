@@ -117,6 +117,7 @@ let user = "user";
 let userPretty = "User";
 
 let list = [];
+let readingList = [];
 
 const prettify = function (s) {
     return s.charAt(0).toUpperCase() + s.toLowerCase().slice(1);
@@ -200,8 +201,6 @@ const getSadGif = async function () {
     const list = await jsonFile.json();
     const randomIndex = Math.floor(Math.random() * 25);
     const gifArray = list.data;
-    // console.log(list);
-    // console.log(gifArray);
     const gif = gifArray[randomIndex];
     const gifURL = gif.images.original.url;
     const sadImg = document.querySelector(".sad img");
@@ -297,8 +296,6 @@ const getTskGif = async function () {
     const list = await jsonFile.json();
     const randomIndex = Math.floor(Math.random() * 25);
     const gifArray = list.data;
-    // console.log(list);
-    // console.log(gifArray);
     const gif = gifArray[randomIndex];
     const gifURL = gif.images.original.url;
     const tskImg = document.querySelector(".tsk img");
@@ -337,8 +334,6 @@ const getPleaseGif = async function () {
     const list = await jsonFile.json();
     const randomIndex = Math.floor(Math.random() * 25);
     const gifArray = list.data;
-    // console.log(list);
-    // console.log(gifArray);
     const gif = gifArray[randomIndex];
     const gifURL = gif.images.original.url;
     const pleaseImg = document.querySelector(".please img");
@@ -354,7 +349,6 @@ repeat.addEventListener("click", function () {
 
 const speakWord = async function () {
     if (list.length === totalWords) {
-
         getWord();
         speak(`Your first word is, ${currentSpokenWord}.`)
     } else if (list.length > 0) {
@@ -408,7 +402,7 @@ guess.addEventListener("keydown", function (e) {
     }
 });
 
-const checkGuess = function () {
+const checkGuess = async function () {
     if (currentWord === guess.value) {
         speak("Correct!");
         guess.value = "";
@@ -416,8 +410,18 @@ const checkGuess = function () {
         adjustProgress();
         speakWord();
     } else {
-        speak("Sorry, that's incorrect.  Try again!");
-        speak(`The word is ${currentSpokenWord}.`);
+        const spelledOut = currentWord.split("");
+        const spelledOutString = spelledOut.toString();
+        speak(`Sorry, that's incorrect.  The correct spelling of ${currentWord} is ...`);
+        const saveRate = voiceRate; 
+        voiceRate = 0.7;
+        speak(spelledOutString);
+        voiceRate = saveRate;
+        speak(`I'll put it back in your list to try again later.`);
+        list.push(currentWord);
+        list.push(currentSpokenWord);
+        guess.value = "";
+        speakWord();
     }
 }
 
@@ -431,11 +435,6 @@ const adjustProgress = function () {
     }
 
 };
-
-
-
-
-
 
 
 /* -----------------------------------------------
@@ -508,6 +507,7 @@ const speak = function (message) {
     utterThis.pitch = voicePitch;
     utterThis.voice = voice;
     synth.speak(utterThis);
+    return utterThis;
 };
 
 
@@ -524,12 +524,6 @@ function populateVoiceList() {
             return v;
         }
     });
-    //   voices = synth.getVoices().sort(function (a, b) {
-    //       const aname = a.name.toUpperCase(), bname = b.name.toUpperCase();
-    //       if ( aname < bname ) return -1;
-    //       else if ( aname == bname ) return 0;
-    //       else return +1;
-    //   });
     var selectedIndex = voiceSelect.selectedIndex < 0 ? 0 : voiceSelect.selectedIndex;
     voiceSelect.innerHTML = '';
     for (i = 0; i < voices.length; i++) {
