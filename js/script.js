@@ -172,7 +172,8 @@ const welcome = function () {
     speak(`Welcome, ${user}! Are you ready to spell?`);
 }
 
-const noWelcome = function () {
+const noWelcome = async function () {
+    await getSadGif();
     userName.value = "";
     landing.classList.add("hide");
     sad.classList.remove("hide");
@@ -194,6 +195,21 @@ sadX.addEventListener("click", function () {
     synth.cancel();
 });
 
+const getSadGif = async function () {
+    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=sad&limit=25&offset=0&rating=g&lang=en");
+    const list = await jsonFile.json();
+    const randomIndex = Math.floor(Math.random() * 25);
+    const gifArray = list.data;
+    // console.log(list);
+    // console.log(gifArray);
+    const gif = gifArray[randomIndex];
+    const gifURL = gif.images.original.url;
+    const sadImg = document.querySelector(".sad img");
+    sadImg.src = gifURL;
+
+
+}
+
 
 /* -----------------------------------------------
 /* ENTRY PAGE 
@@ -208,7 +224,8 @@ const noButton = document.querySelector("#no");
 let totalWords = 0;
 let wordNum = 1;
 
-noButton.addEventListener("click", function () {
+noButton.addEventListener("click", async function () {
+    await getTskGif();
     entry.classList.add("hide");
     tsk.classList.remove("hide");
     synth.cancel();
@@ -275,6 +292,21 @@ tskX.addEventListener("click", function () {
     synth.cancel();
 });
 
+const getTskGif = async function () {
+    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=thumbs%20down&limit=25&offset=0&rating=g&lang=en");
+    const list = await jsonFile.json();
+    const randomIndex = Math.floor(Math.random() * 25);
+    const gifArray = list.data;
+    // console.log(list);
+    // console.log(gifArray);
+    const gif = gifArray[randomIndex];
+    const gifURL = gif.images.original.url;
+    const tskImg = document.querySelector(".tsk img");
+    tskImg.src = gifURL;
+
+
+}
+
 
 /* -----------------------------------------------
 /* QUIZ PAGE 
@@ -294,10 +326,26 @@ let currentSpokenWord = "default";
 
 
 
-quizX.addEventListener("click", function () {
+quizX.addEventListener("click", async function () {
+    await getPleaseGif();
     speak("Are you sure you want to leave your quiz?");
     please.classList.remove("hide");
 });
+
+const getPleaseGif = async function () {
+    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=please%20stay&limit=25&offset=0&rating=g&lang=en");
+    const list = await jsonFile.json();
+    const randomIndex = Math.floor(Math.random() * 25);
+    const gifArray = list.data;
+    // console.log(list);
+    // console.log(gifArray);
+    const gif = gifArray[randomIndex];
+    const gifURL = gif.images.original.url;
+    const pleaseImg = document.querySelector(".please img");
+    pleaseImg.src = gifURL;
+
+
+}
 
 repeat.addEventListener("click", function () {
     synth.cancel();
@@ -322,14 +370,14 @@ const speakWord = async function () {
 }
 
 const getCongratsGif = async function () {
-    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=celebrate&limit=25&offset=0&rating=g&lang=en");
+    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=celebration&limit=25&offset=0&rating=g&lang=en");
     const list = await jsonFile.json();
     const randomIndex = Math.floor(Math.random() * 25);
     const gifArray = list.data;
     // console.log(list);
     // console.log(gifArray);
     const gif = gifArray[randomIndex];
-    const gifURL = gif.images.downsized.url;
+    const gifURL = gif.images.original.url;
     const congratsImg = document.querySelector(".congrats img");
     congratsImg.src = gifURL;
 
@@ -442,6 +490,7 @@ var pitch = document.querySelector('#pitch');
 var pitchValue = document.querySelector('.pitch-value');
 var rate = document.querySelector('#rate');
 var rateValue = document.querySelector('.rate-value');
+const ok = document.querySelector("#ok");
 
 let voices = [];
 
@@ -504,6 +553,11 @@ if (speechSynthesis.onvoiceschanged !== undefined) {
 
 inputForm.onsubmit = function (event) {
     event.preventDefault();
+    makeSpeechSample();
+
+}
+
+const makeSpeechSample = function () {
     synth.cancel();
     var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
     for (i = 0; i < voices.length; i++) {
@@ -516,8 +570,6 @@ inputForm.onsubmit = function (event) {
     voiceRate = rate.value;
 
     speak("Would you like me to speak to you in this voice?");
-
-    inputTxt.blur();
 }
 
 pitch.onchange = function () {
@@ -529,9 +581,14 @@ rate.onchange = function () {
 }
 
 voiceSelect.onchange = function () {
-    speak("Would you like me to speak to you in this voice?");
+    makeSpeechSample();
 }
 
+ok.addEventListener( "click", function () {
+    settings.classList.add("hide");
+    landing.classList.remove("hide");
+    synth.cancel();
+});
 
 
 

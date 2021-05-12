@@ -21,7 +21,7 @@
 
             <input id="name" spellcheck="false" placeholder="Type your name here"></input>
             <button id="submit-name">Enter</button>
-            <button id="speech-settings"><i class="fas fa-cog"></i> Speech Settings</button>
+            <button id="speech-settings"><i class="fas fa-cog"></i></button>
         </div>
     </div>
 
@@ -33,23 +33,14 @@
             <form>
                 <div>
                     <div class="slider">
-
                         <label for="rate">Rate:</label>
-
-
                         <input class="range" type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
                         <div class="rate-value">1</div>
-
-
                     </div>
                     <div class="slider">
-
                         <label for="pitch">Pitch:</label>
-
-
                         <input class="range" type="range" min="0" max="2" value="1" step="0.1" id="pitch">
                         <div class="pitch-value">1</div>
-
                     </div>
 
                     <select>
@@ -57,11 +48,12 @@
                     </select>
                 </div>
                 <div class="controls">
-                    <button id="play" type="submit">Play</button>
+                    <button id="play" type="submit"><img src="img/voice-white.png" alt="speak"></button>
+                    <button id="ok" type="button"><i class="fas fa-check"></i></button>
                 </div>
             </form>
 
-            <button id="ok">OK</button>
+            
 
 
 
@@ -114,7 +106,7 @@
 
             <div class="two-wide">
                 <p>Repeat word:</p>
-                <button id="speak-button"><img src="img/voice.png" alt="head speaking" /></button>
+                <button id="speak-button"><img src="img/voice-white.png" alt="head speaking" /></button>
             </div>
 
             <div class="meter">
