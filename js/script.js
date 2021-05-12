@@ -411,15 +411,16 @@ const checkGuess = async function () {
         speakWord();
     } else {
         const spelledOut = currentWord.split("");
-        const spelledOutString = spelledOut.toString();
         speak(`Sorry, that's incorrect.  The correct spelling of ${currentWord} is ...`);
         const saveRate = voiceRate; 
         voiceRate = 0.7;
-        speak(spelledOutString);
+        for (var letter of spelledOut) {
+            speak(letter);
+        }
         voiceRate = saveRate;
         speak(`I'll put it back in your list to try again later.`);
         list.push(currentWord);
-        list.push(currentSpokenWord);
+        readingList.push(currentSpokenWord);
         guess.value = "";
         speakWord();
     }
