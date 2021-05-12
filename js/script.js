@@ -108,6 +108,33 @@ const joshList = [
     "answer"
 ];
 
+const joshReadingList = [
+    "castle. The queen lives in a castle.",
+    "design. You drew a beautiful design.",
+    "wrinkle. Paisley's forehead has a wrinkle or two.",
+    "honest. Please be honest in answering my questions.",
+    "through. The car drove through the tunnel.",
+    "knuckle. He scraped his knuckle on the wood.",
+    "bought. I bought 5 gallons of milk today.",
+    "whistle. If you whistle, Paisley will come to you.",
+    "honor. Honor your father and your mother.",
+    "moisten. You may need to moisten the stamp to get it to stick.",
+    "resign. It is possible for a president to resign.",
+    "wrestle. You and Ben love to wrestle.",
+    "rhyme. Every line of the poem is a rhyme.",
+    "listen. Make sure to listen closely to the instructions.",
+    "thought. He thought about her idea.",
+    "often. Make sure to study your spelling often!",
+    "brought. You brought your backpack with you to school today.",
+    "knowledge. Every day your knowledge grows!",
+    "wreckage. They were searching for the wreckage of the Titanic.",
+    "soften. You must kneed the dough to soften it.",
+    "rhythm. She beat a rhythm on the drum.",
+    "assign. Your teacher will assign you homework in third grade.",
+    "though. Even though it is cold outside, we are going to the park.",
+    "answer.  Do you have an answer for my question?"
+];
+
 
 /* GLOBAL VARIABLES AND FUNCTIONS */
 
@@ -263,7 +290,7 @@ const getList = function () {
         readingList = [...claireList];
     } else if (user === "JOSHUA" || user === "JOSH") {
         list = [...joshList];
-        readingList = [...joshList];
+        readingList = [...joshReadingList];
     } else if (user === "BENJAMIN" || user === "BENJIE" || user === "BEN") {
         list = [...benList];
         readingList = [...benReadingList];
