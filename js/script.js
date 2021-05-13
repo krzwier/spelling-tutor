@@ -25,7 +25,34 @@ const claireList = [
     "confession"
 ];
 
-const hannahList = ["a", "b", "c"];
+const hannahList = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z"
+];
 
 
 
@@ -286,15 +313,19 @@ const resetProgress = function () {
 
 const getList = function () {
     if (user === "CLAIRE") {
+        guess.style.textTransform = "none";
         list = [...claireList];
         readingList = [...claireList];
     } else if (user === "JOSHUA" || user === "JOSH") {
+        guess.style.textTransform = "none";
         list = [...joshList];
         readingList = [...joshReadingList];
     } else if (user === "BENJAMIN" || user === "BENJIE" || user === "BEN") {
+        guess.style.textTransform = "none";
         list = [...benList];
         readingList = [...benReadingList];
     } else if (user === "HANNAH") {
+        guess.style.textTransform = "uppercase";
         list = [...hannahList];
         readingList = [...hannahList];
     } else {
@@ -344,6 +375,7 @@ const repeat = document.querySelector("#speak-button");
 const submit = document.querySelector("#submit-guess");
 const guess = document.querySelector("#guess");
 const meter = document.querySelector(".meter>span");
+const showLetter = document.querySelector(".show-letter");
 
 let currentWord = "default";
 let currentSpokenWord = "default";
@@ -375,17 +407,31 @@ repeat.addEventListener("click", function () {
 });
 
 const speakWord = async function () {
-    if (list.length === totalWords) {
-        getWord();
-        speak(`Your first word is, ${currentSpokenWord}.`)
-    } else if (list.length > 0) {
-        getWord();
-        speak(`The next word is, ${currentSpokenWord}.`);
+    if (user === "HANNAH") {
+        if (list.length > 0) {
+            getWord();
+            speak('Find the letter');
+            speak(currentSpokenWord);
+            speak('on the keyboard and press it.');
+        } else {
+            quiz.classList.add("hide");
+            await getCongratsGif();
+            congrats.classList.remove("hide");
+            speak("You've completed your quiz!  Well done!");
+        }
     } else {
-        quiz.classList.add("hide");
-        await getCongratsGif();
-        congrats.classList.remove("hide");
-        speak("You've completed your quiz!  Well done!");
+        if (list.length === totalWords) {
+            getWord();
+            speak(`Your first word is, ${currentSpokenWord}.`)
+        } else if (list.length > 0) {
+            getWord();
+            speak(`The next word is, ${currentSpokenWord}.`);
+        } else {
+            quiz.classList.add("hide");
+            await getCongratsGif();
+            congrats.classList.remove("hide");
+            speak("You've completed your quiz!  Well done!");
+        }
     }
 
 }
@@ -430,26 +476,44 @@ guess.addEventListener("keydown", function (e) {
 });
 
 const checkGuess = async function () {
-    if (currentWord === guess.value) {
-        speak("Correct!");
-        guess.value = "";
-        wordNum++;
-        adjustProgress();
-        speakWord();
-    } else {
-        const spelledOut = currentWord.split("");
-        speak(`Sorry, that's incorrect.  The correct spelling of ${currentWord} is ...`);
-        const saveRate = voiceRate; 
-        voiceRate = 0.7;
-        for (var letter of spelledOut) {
-            speak(letter);
+    if (user === "HANNAH") {
+        if (currentWord === guess.value) {
+            speak("Correct!");
+            guess.value = "";
+            showLetter.textContent = "";
+            wordNum++;
+            adjustProgress();
+            speakWord();
+        } else {
+            guess.value = "";
+            speak("Sorry, that's incorrect.  The letter");
+            speak(currentSpokenWord);
+            speak("looks like this. Find it on the keyboard and press it!");
+            showLetter.textContent = currentWord.toUpperCase();
         }
-        voiceRate = saveRate;
-        speak(`I'll put it back in your list to try again later.`);
-        list.push(currentWord);
-        readingList.push(currentSpokenWord);
-        guess.value = "";
-        speakWord();
+    } else {
+        if (currentWord === guess.value) {
+            speak("Correct!");
+            guess.value = "";
+            wordNum++;
+            adjustProgress();
+            speakWord();
+        } else {
+            const spelledOut = currentWord.split("");
+            speak(`Sorry, that's incorrect.  The correct spelling of ${currentWord} is ...`);
+            const saveRate = voiceRate;
+            voiceRate = 0.7;
+            for (var letter of spelledOut) {
+                speak(letter);
+            }
+            voiceRate = saveRate;
+            speak(`I'll put it back in your list to try again later.`);
+            list.push(currentWord);
+            readingList.push(currentSpokenWord);
+            guess.value = "";
+            speakWord();
+        }
+
     }
 }
 
@@ -606,7 +670,7 @@ voiceSelect.onchange = function () {
     makeSpeechSample();
 }
 
-ok.addEventListener( "click", function () {
+ok.addEventListener("click", function () {
     settings.classList.add("hide");
     landing.classList.remove("hide");
     synth.cancel();

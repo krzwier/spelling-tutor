@@ -137,12 +137,20 @@ button:focus {
     margin-bottom: 0.5rem;
 }
 
+.show-letter {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    color: red;
+}
+
 .quiz p {
     font-size: 1rem;
     font-weight: normal;
 }
 
 .quiz input {
+    font-family: sans-serif;
     padding: 16px;
     width: calc(100% - 32px);
 }
