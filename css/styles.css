@@ -1,11 +1,9 @@
 body {
     display: flex;
-    /* flex-flow: column nowrap; */
     align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    /* overflow: hidden; */
     font-family: "Montserrat";
     font-weight: bold;
     background: url(../img/letters.jpg) center no-repeat;
@@ -23,9 +21,7 @@ body {
     background-color: rgba(255, 255, 255, .94);
     border-radius: 20px;
     max-width: 90%;
-    padding: 75px 125px;
-    /* width: 600px;
-    height: 400px; */
+    padding: 30px;
 }
 
 .modal .modal-container {
@@ -34,7 +30,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 0;
-    margin: 20px;
+    /* margin: 30px; */
 }
 
 .modal .modal-x {
@@ -71,7 +67,7 @@ body {
 h1 {
     margin-top: 0;
     color: #292929;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.5;
     text-align: center;
 }
@@ -79,7 +75,7 @@ h1 {
 p {
     margin: 0;
     color: #292929;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     text-align: center;
 }
@@ -123,6 +119,8 @@ button:focus {
 #speech-settings {
     background-color: lightgray;
     color: #292929;
+    margin-top: 0;
+    width: 100%;
 }
 
 .two-wide {
@@ -239,28 +237,37 @@ button:focus {
 .settings form {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+}
+
+.sliders {
+    width: 80%;
+    display: flex;
+    flex-flow: column nowrap;
     justify-content: start;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .slider {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 }
 
 .slider label, .slider div {
     line-height: 48px;
 }
 
-.slider label {
+/* .slider label {
     width: 60px;
-}
+} */
 
 .slider div {
     text-align: right;
-    width: 40px;
+    /* width: 40px; */
 }
 
 .range {
@@ -268,19 +275,35 @@ button:focus {
 }
 
 .controls {
-    margin-left: 20px;
+    /* margin-left: 20px; */
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: top;
+    align-items: right;
     padding: 0;
+    width: 15%;
+    border-left: 10px;
 
+}
+
+#play, #ok {
+    margin: 5px 0 10px 0;
+    padding: 5px;
+    font-size: 24px;
+    height: 38px;
+}
+
+#ok {
+    margin: 0;
 }
 
 #play img {
-    width: 32px;
+    height: 24px;
 }
-
+/* 
+#ok {
+    width: 32px;
+} */
 
 
 select {
@@ -291,8 +314,8 @@ select {
     /* color: #444; */
     line-height: 2;
     padding: 0 10px;
-    width: 100%;
-    max-width: 100%;
+    width: 90%;
+    
     box-sizing: border-box;
     margin: 16px 0;
     border: 1px solid #aaa;
