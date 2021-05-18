@@ -1,28 +1,57 @@
 /* SPELLING LISTS */
 
 const claireList = [
-    "collect",
-    "collection",
-    "express",
-    "expression",
-    "protect",
-    "protection",
-    "discuss",
-    "discussion",
-    "subtract",
-    "subtraction",
-    "select",
-    "selection",
-    "impress",
-    "impression",
-    "connect",
-    "connection",
-    "opress",
-    "opression",
-    "possess",
-    "possession",
-    "confess",
-    "confession"
+    "invent",
+    "invention",
+    "magic",
+    "magician",
+    "digest",
+    "digestion",
+    "suggest",
+    "suggestion",
+    "adopt",
+    "adoption",
+    "insert",
+    "insertion",
+    "desert",
+    "desertion",
+    "electric",
+    "eletrician",
+    "prevent",
+    "prevention",
+    "music",
+    "musician",
+    "clinic",
+    "clinician",
+    "distort",
+    "distortion"
+];
+
+const claireReadingList = [
+    "invent. She will invent a fantastic machine.",
+    "invention. The lightbulb was Thomas Edison's invention.",
+    "magic. The rabbit disappeared like magic.",
+    "magician. The magician pulled a rabbit out of a hat.",
+    "digest. Dogs do not digest fruit well.",
+    "digestion. Fiber aids in digestion.",
+    "suggest. I suggest that you work on your homework.",
+    "suggestion. He gave me a suggestion that helped me.",
+    "adopt. The couple is about to adopt a young boy.",
+    "adoption. Many dogs are up for adoption at the animal shelter.",
+    "insert. Please insert your credit card.",
+    "insertion. The writer made a last-minute insertion in the speech.",
+    "desert. Please don't desert me!",
+    "desertion. That soldier is charged with desertion of his post.",
+    "electric. It's electric. Boogie woogie woogie.",
+    "eletrician. The electrician's name was Jeffery.",
+    "prevent. The fence will prevent the chickens from escaping.",
+    "prevention. Masks can aide in the prevention of disease transmission.",
+    "music. I love to listen to banjo music.",
+    "musician. Hannah is an aspiring musician.",
+    "clinic. I went to the clinic to see a doctor.",
+    "clinician. The clinician gave her the results of her blood test.",
+    "distort. Don't distort the truth!",
+    "distortion. President Trump was frequently responsible for the distortion of information."
 ];
 
 const hannahList = [
@@ -54,113 +83,127 @@ const hannahList = [
     "z"
 ];
 
-
-
-const benList = [
-    "care",
-    "hair",
-    "part",
-    "fair",
-    "start",
-    "harm",
-    "rare",
-    "chair",
-    "spare",
-    "sharp",
-    "pair",
-    "stare",
-    "chart",
-    "dark",
-    "square",
-    "hare",
-    "pear",
-    "heart",
-    "shark",
-    "fare",
-    "bear",
-    "stair",
-    "bare"
+benList = [
+    "supercalifragilisticexpialidocious"
 ];
 
-const benReadingList = [
-    "care",
-    "hair. I have hair on my head.",
-    "part",
-    "fair. The rules of the game were fair.",
-    "start",
-    "harm",
-    "rare",
-    "chair",
-    "spare",
-    "sharp",
-    "pair. I have a great pair of shoes.",
-    "stare. It makes me uncomfortable when you stare.",
-    "chart",
-    "dark",
-    "square",
-    "hare. There was a race between the tortoise and the hare.",
-    "pear. I'd love to eat a pear.",
-    "heart",
-    "shark",
-    "fare. Please pay the fare before passing through the gate.",
-    "bear. I was walking through the woods and I saw a bear!",
-    "stair. You need to go up the stair and then turn right.",
-    "bare. After I shaved my head, it was bare!"
+benReadingList = [
+    "supercalifragilisticexpialidocious"
 ];
 
-const joshList = [
-    "castle",
-    "design",
-    "wrinkle",
-    "honest",
-    "through",
-    "knuckle",
-    "bought",
-    "whistle",
-    "honor",
-    "moisten",
-    "resign",
-    "wrestle",
-    "rhyme",
-    "listen",
-    "thought",
-    "often",
-    "brought",
-    "knowledge",
-    "wreckage",
-    "soften",
-    "rhythm",
-    "assign",
-    "though",
-    "answer"
+joshList = [
+    "supercalifragilisticexpialidocious"
 ];
 
-const joshReadingList = [
-    "castle. The queen lives in a castle.",
-    "design. You drew a beautiful design.",
-    "wrinkle. Paisley's forehead has a wrinkle or two.",
-    "honest. Please be honest in answering my questions.",
-    "through. The car drove through the tunnel.",
-    "knuckle. He scraped his knuckle on the wood.",
-    "bought. I bought 5 gallons of milk today.",
-    "whistle. If you whistle, Paisley will come to you.",
-    "honor. Honor your father and your mother.",
-    "moisten. You may need to moisten the stamp to get it to stick.",
-    "resign. It is possible for a president to resign.",
-    "wrestle. You and Ben love to wrestle.",
-    "rhyme. Every line of the poem is a rhyme.",
-    "listen. Make sure to listen closely to the instructions.",
-    "thought. He thought about her idea.",
-    "often. Make sure to study your spelling often!",
-    "brought. You brought your backpack with you to school today.",
-    "knowledge. Every day your knowledge grows!",
-    "wreckage. They were searching for the wreckage of the Titanic.",
-    "soften. You must kneed the dough to soften it.",
-    "rhythm. She beat a rhythm on the drum.",
-    "assign. Your teacher will assign you homework in third grade.",
-    "though. Even though it is cold outside, we are going to the park.",
-    "answer.  Do you have an answer for my question?"
+joshReadingList = [
+    "supercalifragilisticexpialidocious"
 ];
+
+// const benList = [
+//     "care",
+//     "hair",
+//     "part",
+//     "fair",
+//     "start",
+//     "harm",
+//     "rare",
+//     "chair",
+//     "spare",
+//     "sharp",
+//     "pair",
+//     "stare",
+//     "chart",
+//     "dark",
+//     "square",
+//     "hare",
+//     "pear",
+//     "heart",
+//     "shark",
+//     "fare",
+//     "bear",
+//     "stair",
+//     "bare"
+// ];
+
+// const benReadingList = [
+//     "care",
+//     "hair. I have hair on my head.",
+//     "part",
+//     "fair. The rules of the game were fair.",
+//     "start",
+//     "harm",
+//     "rare",
+//     "chair",
+//     "spare",
+//     "sharp",
+//     "pair. I have a great pair of shoes.",
+//     "stare. It makes me uncomfortable when you stare.",
+//     "chart",
+//     "dark",
+//     "square",
+//     "hare. There was a race between the tortoise and the hare.",
+//     "pear. I'd love to eat a pear.",
+//     "heart",
+//     "shark",
+//     "fare. Please pay the fare before passing through the gate.",
+//     "bear. I was walking through the woods and I saw a bear!",
+//     "stair. You need to go up the stair and then turn right.",
+//     "bare. After I shaved my head, it was bare!"
+// ];
+
+// const joshList = [
+//     "castle",
+//     "design",
+//     "wrinkle",
+//     "honest",
+//     "through",
+//     "knuckle",
+//     "bought",
+//     "whistle",
+//     "honor",
+//     "moisten",
+//     "resign",
+//     "wrestle",
+//     "rhyme",
+//     "listen",
+//     "thought",
+//     "often",
+//     "brought",
+//     "knowledge",
+//     "wreckage",
+//     "soften",
+//     "rhythm",
+//     "assign",
+//     "though",
+//     "answer"
+// ];
+
+// const joshReadingList = [
+//     "castle. The queen lives in a castle.",
+//     "design. You drew a beautiful design.",
+//     "wrinkle. Paisley's forehead has a wrinkle or two.",
+//     "honest. Please be honest in answering my questions.",
+//     "through. The car drove through the tunnel.",
+//     "knuckle. He scraped his knuckle on the wood.",
+//     "bought. I bought 5 gallons of milk today.",
+//     "whistle. If you whistle, Paisley will come to you.",
+//     "honor. Honor your father and your mother.",
+//     "moisten. You may need to moisten the stamp to get it to stick.",
+//     "resign. It is possible for a president to resign.",
+//     "wrestle. You and Ben love to wrestle.",
+//     "rhyme. Every line of the poem is a rhyme.",
+//     "listen. Make sure to listen closely to the instructions.",
+//     "thought. He thought about her idea.",
+//     "often. Make sure to study your spelling often!",
+//     "brought. You brought your backpack with you to school today.",
+//     "knowledge. Every day your knowledge grows!",
+//     "wreckage. They were searching for the wreckage of the Titanic.",
+//     "soften. You must kneed the dough to soften it.",
+//     "rhythm. She beat a rhythm on the drum.",
+//     "assign. Your teacher will assign you homework in third grade.",
+//     "though. Even though it is cold outside, we are going to the park.",
+//     "answer.  Do you have an answer for my question?"
+// ];
 
 
 /* GLOBAL VARIABLES AND FUNCTIONS */
@@ -315,7 +358,7 @@ const getList = function () {
     if (user === "CLAIRE") {
         guess.style.textTransform = "none";
         list = [...claireList];
-        readingList = [...claireList];
+        readingList = [...claireReadingList];
     } else if (user === "JOSHUA" || user === "JOSH") {
         guess.style.textTransform = "none";
         list = [...joshList];
