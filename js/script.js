@@ -16,7 +16,7 @@ const claireList = [
     "desert",
     "desertion",
     "electric",
-    "eletrician",
+    "electrician",
     "prevent",
     "prevention",
     "music",
@@ -33,7 +33,7 @@ const claireReadingList = [
     "magic. The rabbit disappeared like magic.",
     "magician. The magician pulled a rabbit out of a hat.",
     "digest. Dogs do not digest fruit well.",
-    "digestion. Fiber aids in digestion.",
+    "digestion. Fiber aids digestion.",
     "suggest. I suggest that you work on your homework.",
     "suggestion. He gave me a suggestion that helped me.",
     "adopt. The couple is about to adopt a young boy.",
@@ -43,7 +43,7 @@ const claireReadingList = [
     "desert. Please don't desert me!",
     "desertion. That soldier is charged with desertion of his post.",
     "electric. It's electric. Boogie woogie woogie.",
-    "eletrician. The electrician's name was Jeffery.",
+    "electrician. The electrician's name was Jeffery.",
     "prevent. The fence will prevent the chickens from escaping.",
     "prevention. Masks can aide in the prevention of disease transmission.",
     "music. I love to listen to banjo music.",
@@ -617,7 +617,7 @@ congratsX.addEventListener("click", function () {
 
 const settings = document.querySelector('.settings');
 const settingsX = document.querySelector('.settings .modal-x');
-var inputForm = document.querySelector('form');
+
 var voiceSelect = document.querySelector('select');
 
 var pitch = document.querySelector('#pitch');
@@ -625,6 +625,7 @@ var pitchValue = document.querySelector('.pitch-value');
 var rate = document.querySelector('#rate');
 var rateValue = document.querySelector('.rate-value');
 const ok = document.querySelector("#ok");
+const play = document.querySelector("#play");
 
 let voices = [];
 
@@ -680,11 +681,11 @@ if (speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = populateVoiceList;
 }
 
-inputForm.onsubmit = function (event) {
-    event.preventDefault();
-    makeSpeechSample();
+// inputForm.onsubmit = function (event) {
+//     event.preventDefault();
+//     makeSpeechSample();
 
-}
+// }
 
 const makeSpeechSample = function () {
     synth.cancel();
@@ -717,6 +718,10 @@ ok.addEventListener("click", function () {
     settings.classList.add("hide");
     landing.classList.remove("hide");
     synth.cancel();
+});
+
+play.addEventListener("click", function() {
+    makeSpeechSample();
 });
 
 
