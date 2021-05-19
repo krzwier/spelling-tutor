@@ -27,7 +27,7 @@
 
     <div class="settings modal hide">
         <div class="modal-container">
-            <span class="modal-x"><i class="fas fa-times"></i></span>
+            <button class="modal-x"><i class="fas fa-times"></i></button>
             <h1>Speech Settings</h1>
 
 
@@ -73,7 +73,7 @@
 
     <div class="entry modal hide">
         <div class="modal-container">
-            <span class="modal-x"><i class="fas fa-times"></i></span>
+            <button class="modal-x"><i class="fas fa-times"></i></button>
 
             <h1>Welcome, user!</h1>
             <p>Are you ready to spell?</p>
@@ -85,28 +85,27 @@
     </div>
 
     <div class="sad modal hide">
-        <div class="modal-container">
-            <span class="modal-x"><i class="fas fa-times"></i></span>
+        <div class="img-container">
+            <button class="modal-x"><i class="fas fa-times"></i></button>
 
-            <img src="img/sad-face.gif" alt="Agnes with sad face" />
+            <img class="animated-gif" src="img/sad-face.gif" alt="Sad" />
         </div>
     </div>
 
 
 
     <div class="tsk modal hide">
-        <div class="modal-container">
-            <span class="modal-x"><i class="fas fa-times"></i></span>
+        <!-- <div class="img-container"> -->
+            <button class="modal-x"><i class="fas fa-times"></i></button>
 
+            <img class="animated-gif" src="img/shake-head.gif" alt="disapproving" />
 
-            <img src="img/shake-head.gif" alt="man shaking head" />
-
-        </div>
+        <!-- </div> -->
     </div>
 
     <div class="quiz modal hide">
         <div class="modal-container">
-            <span class="modal-x"><i class="fas fa-times"></i></span>
+            <button class="modal-x"><i class="fas fa-times"></i></button>
 
             <h1>Spelling Quiz</h1>
 
@@ -129,9 +128,10 @@
 
             <div class="please modal hide box sb">
                 <h1>Wait, really?</h1>
+                <div class="img-container">
 
-                <img src="img/please.gif" alt="Puss in boots begging with his eyes" />
-
+                    <img class="animated-gif" src="img/please.gif" alt="please don't leave me" />
+                </div>
                 <div>
                     <button id="yes-close">Yes</button>
                     <button id="no-close">No</button>
@@ -142,11 +142,11 @@
     </div>
 
     <div class="congrats modal hide">
-        <div class="modal-container">
-            <span class="modal-x"><i class="fas fa-times"></i></span>
+        <div class="img-container">
+            <button class="modal-x"><i class="fas fa-times"></i></button>
 
 
-            <img src="img/celebrate.gif" alt="celebrate" />
+            <img class="animated-gif" src="img/celebrate.gif" alt="celebrate" />
 
         </div>
     </div>

@@ -299,7 +299,13 @@ const getSadGif = async function () {
     const randomIndex = Math.floor(Math.random() * 25);
     const gifArray = list.data;
     const gif = gifArray[randomIndex];
-    const gifURL = gif.images.original.url;
+    console.log(gif);
+    let gifURL = "";
+    if (window.innerHeight < 768) {
+        gifURL = gif.images.fixed_height.url;
+    } else {
+        gifURL = gif.images.original.url;
+    }
     const sadImg = document.querySelector(".sad img");
     sadImg.src = gifURL;
 
@@ -398,7 +404,12 @@ const getTskGif = async function () {
     const randomIndex = Math.floor(Math.random() * 25);
     const gifArray = list.data;
     const gif = gifArray[randomIndex];
-    const gifURL = gif.images.original.url;
+    let gifURL = "";
+    if (window.innerHeight < 768) {
+        gifURL = gif.images.fixed_height.url;
+    } else {
+        gifURL = gif.images.original.url;
+    }
     const tskImg = document.querySelector(".tsk img");
     tskImg.src = gifURL;
 
@@ -427,17 +438,24 @@ let currentSpokenWord = "default";
 
 quizX.addEventListener("click", async function () {
     await getPleaseGif();
+    synth.cancel();
     speak("Are you sure you want to leave your quiz?");
+    quizX.disabled = true;
     please.classList.remove("hide");
 });
 
 const getPleaseGif = async function () {
-    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=please%20stay&limit=25&offset=0&rating=g&lang=en");
+    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=begging&limit=25&offset=0&rating=g&lang=en");
     const list = await jsonFile.json();
     const randomIndex = Math.floor(Math.random() * 25);
     const gifArray = list.data;
     const gif = gifArray[randomIndex];
-    const gifURL = gif.images.original.url;
+    let gifURL = "";
+    if (window.innerHeight < 768) {
+        gifURL = gif.images.fixed_height.url;
+    } else {
+        gifURL = gif.images.original.url;
+    }
     const pleaseImg = document.querySelector(".please img");
     pleaseImg.src = gifURL;
 
@@ -487,7 +505,12 @@ const getCongratsGif = async function () {
     // console.log(list);
     // console.log(gifArray);
     const gif = gifArray[randomIndex];
-    const gifURL = gif.images.original.url;
+    let gifURL = "";
+    if (window.innerHeight < 768) {
+        gifURL = gif.images.fixed_height.url;
+    } else {
+        gifURL = gif.images.original.url;
+    }
     const congratsImg = document.querySelector(".congrats img");
     congratsImg.src = gifURL;
 
@@ -586,11 +609,13 @@ yesClose.addEventListener("click", function () {
     quiz.classList.add("hide");
     landing.classList.remove("hide");
     synth.cancel();
+    quizX.disabled = false;
 });
 
 noClose.addEventListener("click", function () {
     please.classList.add("hide");
     synth.cancel();
+    quizX.disabled = false;
 });
 
 
