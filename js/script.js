@@ -301,7 +301,7 @@ const getSadGif = async function () {
     const gif = gifArray[randomIndex];
     console.log(gif);
     let gifURL = "";
-    if (window.innerHeight < 768) {
+    if (window.innerHeight < 824) {
         gifURL = gif.images.fixed_height.url;
     } else {
         gifURL = gif.images.original.url;
@@ -405,7 +405,7 @@ const getTskGif = async function () {
     const gifArray = list.data;
     const gif = gifArray[randomIndex];
     let gifURL = "";
-    if (window.innerHeight < 768) {
+    if (window.innerHeight < 824) {
         gifURL = gif.images.fixed_height.url;
     } else {
         gifURL = gif.images.original.url;
@@ -451,7 +451,7 @@ const getPleaseGif = async function () {
     const gifArray = list.data;
     const gif = gifArray[randomIndex];
     let gifURL = "";
-    if (window.innerHeight < 768) {
+    if (window.innerHeight < 824) {
         gifURL = gif.images.fixed_height.url;
     } else {
         gifURL = gif.images.original.url;
@@ -502,11 +502,8 @@ const getCongratsGif = async function () {
     const list = await jsonFile.json();
     const randomIndex = Math.floor(Math.random() * 25);
     const gifArray = list.data;
-    // console.log(list);
-    // console.log(gifArray);
-    const gif = gifArray[randomIndex];
     let gifURL = "";
-    if (window.innerHeight < 768) {
+    if (window.innerHeight < 824) {
         gifURL = gif.images.fixed_height.url;
     } else {
         gifURL = gif.images.original.url;
@@ -662,7 +659,6 @@ let voicePitch = 1;
 let voice = voices[0];
 
 const speak = function (message) {
-    //synth.cancel();
     utterThis = new SpeechSynthesisUtterance(message);
     utterThis.rate = voiceRate;
     utterThis.pitch = voicePitch;
@@ -705,12 +701,6 @@ function populateVoiceList() {
 if (speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = populateVoiceList;
 }
-
-// inputForm.onsubmit = function (event) {
-//     event.preventDefault();
-//     makeSpeechSample();
-
-// }
 
 const makeSpeechSample = function () {
     synth.cancel();
