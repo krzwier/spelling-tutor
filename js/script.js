@@ -294,7 +294,7 @@ sadX.addEventListener("click", function () {
 });
 
 const getSadGif = async function () {
-    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=sad&limit=25&offset=0&rating=g&lang=en");
+    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=disappointed&limit=25&offset=0&rating=g&lang=en");
     const list = await jsonFile.json();
     const randomIndex = Math.floor(Math.random() * 25);
     const gifArray = list.data;
@@ -399,7 +399,7 @@ tskX.addEventListener("click", function () {
 });
 
 const getTskGif = async function () {
-    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=thumbs%20down&limit=25&offset=0&rating=g&lang=en");
+    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=tsk%20tsk&limit=25&offset=0&rating=g&lang=en");
     const list = await jsonFile.json();
     const randomIndex = Math.floor(Math.random() * 25);
     const gifArray = list.data;
@@ -445,7 +445,7 @@ quizX.addEventListener("click", async function () {
 });
 
 const getPleaseGif = async function () {
-    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=begging&limit=25&offset=0&rating=g&lang=en");
+    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=please&20don%27t&limit=25&offset=0&rating=g&lang=en");
     const list = await jsonFile.json();
     const randomIndex = Math.floor(Math.random() * 25);
     const gifArray = list.data;
