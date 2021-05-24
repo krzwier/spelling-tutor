@@ -83,127 +83,111 @@ const hannahList = [
     "z"
 ];
 
-benList = [
-    "supercalifragilisticexpialidocious"
+const benList = [
+    "care",
+    "hair",
+    "part",
+    "fair",
+    "start",
+    "harm",
+    "rare",
+    "chair",
+    "spare",
+    "sharp",
+    "pair",
+    "stare",
+    "chart",
+    "dark",
+    "square",
+    "hare",
+    "pear",
+    "heart",
+    "shark",
+    "fare",
+    "bear",
+    "stair",
+    "bare"
 ];
 
-benReadingList = [
-    "supercalifragilisticexpialidocious"
+const benReadingList = [
+    "care",
+    "hair. I have hair on my head.",
+    "part",
+    "fair. The rules of the game were fair.",
+    "start",
+    "harm",
+    "rare",
+    "chair",
+    "spare",
+    "sharp",
+    "pair. I have a great pair of shoes.",
+    "stare. It makes me uncomfortable when you stare.",
+    "chart",
+    "dark",
+    "square",
+    "hare. There was a race between the tortoise and the hare.",
+    "pear. I'd love to eat a pear.",
+    "heart",
+    "shark",
+    "fare. Please pay the fare before passing through the gate.",
+    "bear. I was walking through the woods and I saw a bear!",
+    "stair. You need to go up the stair and then turn right.",
+    "bare. After I shaved my head, it was bare!"
 ];
 
-joshList = [
-    "supercalifragilisticexpialidocious"
+const joshList = [
+    "castle",
+    "design",
+    "wrinkle",
+    "honest",
+    "through",
+    "knuckle",
+    "bought",
+    "whistle",
+    "honor",
+    "moisten",
+    "resign",
+    "wrestle",
+    "rhyme",
+    "listen",
+    "thought",
+    "often",
+    "brought",
+    "knowledge",
+    "wreckage",
+    "soften",
+    "rhythm",
+    "assign",
+    "though",
+    "answer"
 ];
 
-joshReadingList = [
-    "supercalifragilisticexpialidocious"
+const joshReadingList = [
+    "castle. The queen lives in a castle.",
+    "design. You drew a beautiful design.",
+    "wrinkle. Paisley's forehead has a wrinkle or two.",
+    "honest. Please be honest in answering my questions.",
+    "through. The car drove through the tunnel.",
+    "knuckle. He scraped his knuckle on the wood.",
+    "bought. I bought 5 gallons of milk today.",
+    "whistle. If you whistle, Paisley will come to you.",
+    "honor. Honor your father and your mother.",
+    "moisten. You may need to moisten the stamp to get it to stick.",
+    "resign. It is possible for a president to resign.",
+    "wrestle. You and Ben love to wrestle.",
+    "rhyme. Every line of the poem is a rhyme.",
+    "listen. Make sure to listen closely to the instructions.",
+    "thought. He thought about her idea.",
+    "often. Make sure to study your spelling often!",
+    "brought. You brought your backpack with you to school today.",
+    "knowledge. Every day your knowledge grows!",
+    "wreckage. They were searching for the wreckage of the Titanic.",
+    "soften. You must kneed the dough to soften it.",
+    "rhythm. She beat a rhythm on the drum.",
+    "assign. Your teacher will assign you homework in third grade.",
+    "though. Even though it is cold outside, we are going to the park.",
+    "answer.  Do you have an answer for my question?"
 ];
-
-// const benList = [
-//     "care",
-//     "hair",
-//     "part",
-//     "fair",
-//     "start",
-//     "harm",
-//     "rare",
-//     "chair",
-//     "spare",
-//     "sharp",
-//     "pair",
-//     "stare",
-//     "chart",
-//     "dark",
-//     "square",
-//     "hare",
-//     "pear",
-//     "heart",
-//     "shark",
-//     "fare",
-//     "bear",
-//     "stair",
-//     "bare"
-// ];
-
-// const benReadingList = [
-//     "care",
-//     "hair. I have hair on my head.",
-//     "part",
-//     "fair. The rules of the game were fair.",
-//     "start",
-//     "harm",
-//     "rare",
-//     "chair",
-//     "spare",
-//     "sharp",
-//     "pair. I have a great pair of shoes.",
-//     "stare. It makes me uncomfortable when you stare.",
-//     "chart",
-//     "dark",
-//     "square",
-//     "hare. There was a race between the tortoise and the hare.",
-//     "pear. I'd love to eat a pear.",
-//     "heart",
-//     "shark",
-//     "fare. Please pay the fare before passing through the gate.",
-//     "bear. I was walking through the woods and I saw a bear!",
-//     "stair. You need to go up the stair and then turn right.",
-//     "bare. After I shaved my head, it was bare!"
-// ];
-
-// const joshList = [
-//     "castle",
-//     "design",
-//     "wrinkle",
-//     "honest",
-//     "through",
-//     "knuckle",
-//     "bought",
-//     "whistle",
-//     "honor",
-//     "moisten",
-//     "resign",
-//     "wrestle",
-//     "rhyme",
-//     "listen",
-//     "thought",
-//     "often",
-//     "brought",
-//     "knowledge",
-//     "wreckage",
-//     "soften",
-//     "rhythm",
-//     "assign",
-//     "though",
-//     "answer"
-// ];
-
-// const joshReadingList = [
-//     "castle. The queen lives in a castle.",
-//     "design. You drew a beautiful design.",
-//     "wrinkle. Paisley's forehead has a wrinkle or two.",
-//     "honest. Please be honest in answering my questions.",
-//     "through. The car drove through the tunnel.",
-//     "knuckle. He scraped his knuckle on the wood.",
-//     "bought. I bought 5 gallons of milk today.",
-//     "whistle. If you whistle, Paisley will come to you.",
-//     "honor. Honor your father and your mother.",
-//     "moisten. You may need to moisten the stamp to get it to stick.",
-//     "resign. It is possible for a president to resign.",
-//     "wrestle. You and Ben love to wrestle.",
-//     "rhyme. Every line of the poem is a rhyme.",
-//     "listen. Make sure to listen closely to the instructions.",
-//     "thought. He thought about her idea.",
-//     "often. Make sure to study your spelling often!",
-//     "brought. You brought your backpack with you to school today.",
-//     "knowledge. Every day your knowledge grows!",
-//     "wreckage. They were searching for the wreckage of the Titanic.",
-//     "soften. You must kneed the dough to soften it.",
-//     "rhythm. She beat a rhythm on the drum.",
-//     "assign. Your teacher will assign you homework in third grade.",
-//     "though. Even though it is cold outside, we are going to the park.",
-//     "answer.  Do you have an answer for my question?"
-// ];
 
 
 /* GLOBAL VARIABLES AND FUNCTIONS */
@@ -294,12 +278,11 @@ sadX.addEventListener("click", function () {
 });
 
 const getSadGif = async function () {
-    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=disappointed&limit=25&offset=0&rating=g&lang=en");
+    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=disappointed&limit=25&offset=0&rating=pg&lang=en");
     const list = await jsonFile.json();
-    const randomIndex = Math.floor(Math.random() * 25);
+    const randomIndex = Math.floor(Math.random() * list.data.length);
     const gifArray = list.data;
     const gif = gifArray[randomIndex];
-    console.log(gif);
     let gifURL = "";
     if (window.innerHeight < 824) {
         gifURL = gif.images.fixed_height.url;
@@ -401,7 +384,7 @@ tskX.addEventListener("click", function () {
 const getTskGif = async function () {
     const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=tsk%20tsk&limit=25&offset=0&rating=g&lang=en");
     const list = await jsonFile.json();
-    const randomIndex = Math.floor(Math.random() * 25);
+    const randomIndex = Math.floor(Math.random() * list.data.length);
     const gifArray = list.data;
     const gif = gifArray[randomIndex];
     let gifURL = "";
@@ -445,9 +428,9 @@ quizX.addEventListener("click", async function () {
 });
 
 const getPleaseGif = async function () {
-    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=please&20don%27t&limit=25&offset=0&rating=g&lang=en");
+    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=don%27t%20do%20it&limit=25&offset=0&rating=pg&lang=en");
     const list = await jsonFile.json();
-    const randomIndex = Math.floor(Math.random() * 25);
+    const randomIndex = Math.floor(Math.random() * list.data.length);
     const gifArray = list.data;
     const gif = gifArray[randomIndex];
     let gifURL = "";
@@ -500,8 +483,9 @@ const speakWord = async function () {
 const getCongratsGif = async function () {
     const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=celebration&limit=25&offset=0&rating=g&lang=en");
     const list = await jsonFile.json();
-    const randomIndex = Math.floor(Math.random() * 25);
+    const randomIndex = Math.floor(Math.random() * list.data.length);
     const gifArray = list.data;
+    const gif = gifArray[randomIndex];
     let gifURL = "";
     if (window.innerHeight < 824) {
         gifURL = gif.images.fixed_height.url;
