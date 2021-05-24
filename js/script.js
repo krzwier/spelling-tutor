@@ -428,7 +428,7 @@ quizX.addEventListener("click", async function () {
 });
 
 const getPleaseGif = async function () {
-    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=don%27t%20do%20it&limit=25&offset=0&rating=pg&lang=en");
+    const jsonFile = await fetch("https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=don%27t%20do%20it&limit=25&offset=0&rating=g&lang=en");
     const list = await jsonFile.json();
     const randomIndex = Math.floor(Math.random() * list.data.length);
     const gifArray = list.data;
