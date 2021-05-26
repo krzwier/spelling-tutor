@@ -38,17 +38,18 @@ body {
 }
 
 button.modal-x {
+    margin: 0;
     position: absolute;
     top: 0;
     right: 0;
-    display: block;
     width: 40px;
     height: 45px;
-    margin: 0;
+    display: block;
     cursor: pointer;
     color: #292929;
     background: none;
     font-size: 1em;
+    padding: 0;
 }
 
 button.modal-x:hover {
