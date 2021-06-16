@@ -345,19 +345,19 @@ const resetProgress = function () {
 
 const getList = function () {
     if (user === "CLAIRE") {
-        guess.style.textTransform = "none";
+        // guess.style.textTransform = "uppercase";
         list = [...claireList];
         readingList = [...claireReadingList];
     } else if (user === "JOSHUA" || user === "JOSH") {
-        guess.style.textTransform = "none";
+        // guess.style.textTransform = "none";
         list = [...joshList];
         readingList = [...joshReadingList];
     } else if (user === "BENJAMIN" || user === "BENJIE" || user === "BEN") {
-        guess.style.textTransform = "none";
+        // guess.style.textTransform = "none";
         list = [...benList];
         readingList = [...benReadingList];
     } else if (user === "HANNAH") {
-        guess.style.textTransform = "uppercase";
+        // guess.style.textTransform = "uppercase";
         list = [...hannahList];
         readingList = [...hannahList];
     } else {
@@ -549,7 +549,7 @@ const checkGuess = async function () {
             const spelledOut = currentWord.split("");
             speak(`Sorry, that's incorrect.  The correct spelling of ${currentWord} is ...`);
             const saveRate = voiceRate;
-            voiceRate = 0.7;
+            voiceRate = 0.8;
             for (var letter of spelledOut) {
                 speak(letter);
             }
