@@ -1,6 +1,6 @@
 /* SPELLING LISTS */
 
-const claireList = [
+const emmaList = [
     "invent",
     "invention",
     "magic",
@@ -27,7 +27,7 @@ const claireList = [
     "distortion"
 ];
 
-const claireReadingList = [
+const emmaReadingList = [
     "invent. She will invent a fantastic machine.",
     "invention. The lightbulb was Thomas Edison's invention.",
     "magic. The rabbit disappeared like magic.",
@@ -47,14 +47,14 @@ const claireReadingList = [
     "prevent. The fence will prevent the chickens from escaping.",
     "prevention. Masks can aide in the prevention of disease transmission.",
     "music. I love to listen to banjo music.",
-    "musician. Hannah is an aspiring musician.",
+    "musician. Zoey is an aspiring musician.",
     "clinic. I went to the clinic to see a doctor.",
     "clinician. The clinician gave her the results of her blood test.",
     "distort. Don't distort the truth!",
     "distortion. President Trump was frequently responsible for the distortion of information."
 ];
 
-const hannahList = [
+const zoeyList = [
     "a",
     "b",
     "c",
@@ -83,7 +83,7 @@ const hannahList = [
     "z"
 ];
 
-const benList = [
+const bobList = [
     "care",
     "hair",
     "part",
@@ -109,7 +109,7 @@ const benList = [
     "bare"
 ];
 
-const benReadingList = [
+const bobReadingList = [
     "care",
     "hair. I have hair on my head.",
     "part",
@@ -135,7 +135,7 @@ const benReadingList = [
     "bare. After I shaved my head, it was bare!"
 ];
 
-const joshList = [
+const joeyList = [
     "castle",
     "design",
     "wrinkle",
@@ -162,7 +162,7 @@ const joshList = [
     "answer"
 ];
 
-const joshReadingList = [
+const joeyReadingList = [
     "castle. The queen lives in a castle.",
     "design. You drew a beautiful design.",
     "wrinkle. Paisley's forehead has a wrinkle or two.",
@@ -174,7 +174,7 @@ const joshReadingList = [
     "honor. Honor your father and your mother.",
     "moisten. You may need to moisten the stamp to get it to stick.",
     "resign. It is possible for a president to resign.",
-    "wrestle. You and Ben love to wrestle.",
+    "wrestle. You and Bobby love to wrestle.",
     "rhyme. Every line of the poem is a rhyme.",
     "listen. Make sure to listen closely to the instructions.",
     "thought. He thought about her idea.",
@@ -237,7 +237,7 @@ input.addEventListener("keydown", function (e) {
 });
 
 const checkUser = function () {
-    if (user === "JOSH" || user === "JOSHUA" || user === "CLAIRE" || user === "BEN" || user === "BENJAMIN" || user === "BENJIE" || user === "HANNAH") {
+    if (user === "JOEY" || user === "JOSEPH" || user === "EMMA" || user === "BOB" || user === "ROBERT" || user === "BOBBY" || user === "ZOEY") {
         welcome();
 
     } else {
@@ -259,7 +259,7 @@ const noWelcome = async function () {
     userName.value = "";
     landing.classList.add("hide");
     sad.classList.remove("hide");
-    speak(`Sorry, I don't recognize you, ${user}. I'm only allowed to tutor Claire, Josh, Ben, and Hannah in spelling. Too bad for you. You're really missing out on a spectacular spelling list.`);
+    speak(`Sorry, I don't recognize you, ${user}. I'm only allowed to tutor Emma, Joey, Bobby, and Zoey in spelling. Too bad for you. You're really missing out on a spectacular spelling list.`);
 }
 
 
@@ -344,22 +344,22 @@ const resetProgress = function () {
 };
 
 const getList = function () {
-    if (user === "CLAIRE") {
+    if (user === "EMMA") {
         // guess.style.textTransform = "uppercase";
-        list = [...claireList];
-        readingList = [...claireReadingList];
-    } else if (user === "JOSHUA" || user === "JOSH") {
+        list = [...emmaList];
+        readingList = [...emmaReadingList];
+    } else if (user === "JOSEPH" || user === "JOEY") {
         // guess.style.textTransform = "none";
-        list = [...joshList];
-        readingList = [...joshReadingList];
-    } else if (user === "BENJAMIN" || user === "BENJIE" || user === "BEN") {
+        list = [...joeyList];
+        readingList = [...joeyReadingList];
+    } else if (user === "ROBERT" || user === "BOBBY" || user === "BOB") {
         // guess.style.textTransform = "none";
-        list = [...benList];
-        readingList = [...benReadingList];
-    } else if (user === "HANNAH") {
+        list = [...bobList];
+        readingList = [...bobReadingList];
+    } else if (user === "ZOEY") {
         // guess.style.textTransform = "uppercase";
-        list = [...hannahList];
-        readingList = [...hannahList];
+        list = [...zoeyList];
+        readingList = [...zoeyList];
     } else {
         console.log("No list to match user!");
         return;
@@ -451,7 +451,7 @@ repeat.addEventListener("click", function () {
 });
 
 const speakWord = async function () {
-    if (user === "HANNAH") {
+    if (user === "ZOEY") {
         if (list.length > 0) {
             getWord();
             speak('Find the letter');
@@ -504,7 +504,7 @@ const getWord = function () {
     const randomSpokenWord = readingList[randomIndex];
     list.splice(randomIndex, 1);
     readingList.splice(randomIndex, 1);
-    currentWord = randomWord;
+    currentWord = randomWord.toLowerCase();
     currentSpokenWord = randomSpokenWord;
 }
 
@@ -523,8 +523,8 @@ guess.addEventListener("keydown", function (e) {
 });
 
 const checkGuess = async function () {
-    if (user === "HANNAH") {
-        if (currentWord === guess.value) {
+    if (user === "ZOEY") {
+        if (currentWord === guess.value.toLowerCase()) {
             speak("Correct!");
             guess.value = "";
             showLetter.textContent = "";
@@ -539,7 +539,7 @@ const checkGuess = async function () {
             showLetter.textContent = currentWord.toUpperCase();
         }
     } else {
-        if (currentWord === guess.value) {
+        if (currentWord === guess.value.toLowerCase()) {
             speak("Correct!");
             guess.value = "";
             wordNum++;
@@ -586,6 +586,7 @@ const yesClose = document.querySelector("#yes-close");
 const noClose = document.querySelector("#no-close");
 
 yesClose.addEventListener("click", function () {
+    showLetter.textContent = "";
     please.classList.add("hide");
     quiz.classList.add("hide");
     landing.classList.remove("hide");
