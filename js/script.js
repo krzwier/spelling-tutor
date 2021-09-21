@@ -443,10 +443,14 @@ const speakWord = async function () {
    } else {
       if (list.length === totalWords) {
          getWord();
-         speak(`Your first word is, ${currentSpokenWord}.`);
+         speak(
+            `Your first word is, ${currentWord}. ${currentSpokenWord}`
+         );
       } else if (list.length > 0) {
          getWord();
-         speak(`The next word is, ${currentSpokenWord}.`);
+         speak(
+            `The next word is, ${currentWord}. ${currentSpokenWord}`
+         );
       } else {
          quiz.classList.add("hide");
          await getCongratsGif();
