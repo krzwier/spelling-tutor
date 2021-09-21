@@ -14,16 +14,16 @@ const claireList = [
 ];
 
 const claireReadingList = [
-   "mountainous",
-   "harmonize",
-   "electrician",
-   "signature",
-   "quotation",
-   "marvelous",
-   "successful",
-   "secretary",
-   "stationery",
-   "certainly"
+   "Lots of people like to vacation in mountainous regions.",
+   "The singers harmonize with one another.",
+   "The electrician was named Jeffrey.",
+   "You should practice your signature in cursive.",
+   "What is your favorite quotation from that movie?",
+   "Many marvelous mice are making merry music in the moonlight.",
+   "I hope you will be successful on this spelling quiz.",
+   "The secretary is an excellent typist.",
+   "Please write your letter on formal stationery.",
+   "You will certainly love this surprise."
 ];
 
 const hannahList = [
