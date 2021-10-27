@@ -110,57 +110,55 @@ const benReadingList = [
 ];
 
 const joshList = [
-   "grab",
-   "star",
-   "frog",
-   "fork",
-   "scar",
-   "corn",
-   "crop",
-   "track",
-   "barn",
-   "cord",
-   "war",
-   "trot",
-   "scarf",
-   "charm",
-   "trap",
-   "cram",
-   "horn",
-   "cork",
-   "dart",
-   "craft",
-   "mark",
-   "short",
-   "prop",
-   "brag"
+   "girl",
+   "fire",
+   "sir",
+   "third",
+   "bird",
+   "birth",
+   "tire",
+   "spire",
+   "shirt",
+   "fir",
+   "whirl",
+   "hire",
+   "firm",
+   "swirl",
+   "thirst",
+   "chirp",
+   "fur",
+   "skirt",
+   "liar",
+   "twirl",
+   "wire",
+   "dirt",
+   "first"
 ];
 
 const joshReadingList = [
-   "Please grab an apple for me.",
-   "You can wish upon a star.",
-   "The frog loved to sit by his pond and croak.",
-   "Please use your fork while eating.",
-   "You have a scar on your knee.",
-   "In the fall we can try going to a corn maze.",
-   "What kind of crop is being grown in that field?",
-   "Your sister runs track.",
-   "The cows are milked in the barn.",
-   "Be careful with that power cord.",
-   "When two countries can't resolve their disagreements peacefully, they sometimes fight a war.",
-   "Claire knows how to make her horse trot.",
-   "You should wear a scarf in order to keep your neck warm in the winter.",
-   "There was a charm hanging from that necklace.",
-   "Paisley likes to trap people who are laying on the ground.",
-   "Don't cram food in your mouth so fast!",
-   "When drivers need to warn each other, they sometimes honk their horn.",
-   "A wine bottle is closed up with a cork.",
-   "He threw the dart and got a bullseye.",
-   "I loved the craft we made in school today.",
-   "Your shoes made a mark on the gym floor.",
-   "She is a very short person.",
-   "He needed to hold a prop for a scene in the play.",
-   "She likes to brag too often."
+   "That girl is very pretty.",
+   "Please don't set the house on fire.",
+   "Please come this way, sir.",
+   "My team got third place in the tournament.",
+   "A bird was making a nest in that tree.",
+   "I remember the day of my sister's birth.",
+   "My mom had to change the tire on our car.",
+   "The spire of the church can be seen across town.",
+   "My favorite shirt is blue.",
+   "There are many fir trees in the forest.",
+   "Today was so busy that everything felt like a whirl.",
+   "That company wants to hire new employees.",
+   "I sleep on a firm mattress.",
+   "I ordered a chocolate swirl-flavored ice cream cone.",
+   "The only thing that can quench my thirst is a gigantic slurpee.",
+   "The baby birds love to chirp.",
+   "She was wearing a fur coat.",
+   "She was wearing a long elegant skirt.",
+   "I didn't like talking to him, because he was a liar.",
+   "My little sister loves to twirl around when she wears dresses.",
+   "Don't touch the exposed wire, or you will be electrocuted.",
+   "Josh loves to dig in the dirt.",
+   "I was the first in my class to arrive at school."
 ];
 
 /* GLOBAL VARIABLES AND FUNCTIONS */
@@ -434,7 +432,7 @@ const getPleaseGif = async function () {
 
 repeat.addEventListener("click", function () {
    synth.cancel();
-   speak(currentSpokenWord);
+   speak(`${currentWord}. ${currentSpokenWord}`);
 });
 
 const speakWord = async function () {
