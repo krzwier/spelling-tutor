@@ -1,29 +1,49 @@
 /* SPELLING LISTS */
 
 const claireList = [
-   "mountainous",
-   "harmonize",
-   "electrician",
-   "signature",
-   "quotation",
-   "marvelous",
-   "successful",
-   "secretary",
-   "stationery",
-   "certainly"
+   "volcanoes",
+   "dominoes",
+   "barracks",
+   "salmon",
+   "thieves",
+   "kangaroos",
+   "waltzes",
+   "vetoes",
+   "species",
+   "algae",
+   "volcano",
+   "domino",
+   "barrack",
+   "salmon",
+   "thief",
+   "kangaroo",
+   "waltz",
+   "veto",
+   "species",
+   "algae"
 ];
 
 const claireReadingList = [
-   "Lots of people like to vacation in mountainous regions.",
-   "The singers harmonize with one another.",
-   "The electrician was named Jeffrey.",
-   "You should practice your signature in cursive.",
-   "What is your favorite quotation from that movie?",
-   "Many marvelous mice are making merry music in the moonlight.",
-   "I hope you will be successful on this spelling quiz.",
-   "The secretary is an excellent typist.",
-   "Please write your letter on formal stationery.",
-   "You will certainly love this surprise."
+   "It's best not to dive in to the mouths of volcanoes.",
+   "It's best not to play a game of catch near someone setting up dominoes.",
+   "The army unit keeps all of its weapons locked up in the barracks",
+   "An entire school of salmon swam together upstream.",
+   "A group of thieves walked down the dark alley.",
+   "I love seeing the kangaroos at the zoo!",
+   "I danced many waltzes with the prince at the ball.",
+   "The president sometimes vetoes bills that he doesn't agree with.",
+   "That species of shark is very intelligent.",
+   "The pond is full of algae.",
+   "That volcano is scheduled to erupt sometime in the next 100 years.",
+   "Please don't knock over that domino!",
+   "The sargeant ordered all of the soldiers to sleep in the barrack.",
+   "The lonely salmon swam around looking for his friends.",
+   "That thief stole my wallet!",
+   "The kangaroo jumped over the armadillo.",
+   "I do not know how to dance the waltz.",
+   "The president has the power to veto any bill.",
+   "Many species of birds perform mating dances.",
+   "Many different algae were present in that pool."
 ];
 
 const hannahList = [
