@@ -1,49 +1,29 @@
 /* SPELLING LISTS */
 
 const claireList = [
-   "volcanoes",
-   "dominoes",
-   "barracks",
-   "salmon",
-   "thieves",
-   "kangaroos",
-   "waltzes",
-   "vetoes",
-   "species",
-   "algae",
-   "volcano",
-   "domino",
-   "barrack",
-   "salmon",
-   "thief",
-   "kangaroo",
-   "waltz",
-   "veto",
-   "species",
-   "algae"
+   "proceed",
+   "introvert",
+   "deposit",
+   "obstacle",
+   "relocate",
+   "compose",
+   "pendant",
+   "diffuse",
+   "isolate",
+   "remedy"
 ];
 
 const claireReadingList = [
-   "It's best not to dive in to the mouths of volcanoes.",
-   "It's best not to play a game of catch near someone setting up dominoes.",
-   "The army unit keeps all of its weapons locked up in the barracks",
-   "An entire school of salmon swam together upstream.",
-   "A group of thieves walked down the dark alley.",
-   "I love seeing the kangaroos at the zoo!",
-   "I danced many waltzes with the prince at the ball.",
-   "The president sometimes vetoes bills that he doesn't agree with.",
-   "That species of shark is very intelligent.",
-   "The pond is full of algae.",
-   "That volcano is scheduled to erupt sometime in the next 100 years.",
-   "Please don't knock over that domino!",
-   "The sargeant ordered all of the soldiers to sleep in the barrack.",
-   "The lonely salmon swam around looking for his friends.",
-   "That thief stole my wallet!",
-   "The kangaroo jumped over the armadillo.",
-   "I do not know how to dance the waltz.",
-   "The president has the power to veto any bill.",
-   "Many species of birds perform mating dances.",
-   "Many different algae were present in that pool."
+   "Please proceed into the dungeon.",
+   "I like to hide in a cave all day because I am an introvert.",
+   "Please deposit five million dollars into my bank account. Thank you!",
+   "Fortunately, there is always an obstacle in Bob's plans to murder me.",
+   "I do not wish to relocate my to Panama.",
+   "Musicians can compose haunting melodies.",
+   "That is a beautiful pendant with semiprecious stones.",
+   "Many unpleasant scents diffuse around my home.",
+   "We sometimes need to isolate Paisley in her kennel.",
+   "What is the remedy for gangrene?"
 ];
 
 const hannahList = [
