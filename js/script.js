@@ -137,7 +137,7 @@ const joshList = [
 ];
 
 const joshReadingList = [
-   "I hope to get an elephant for Christmas.",
+   "I hope to get an hippopotamususus for Christmas.",
    "I will be getting an elephant for Christmas.",
    "I don't want to rest right now.",
    "I like putting up my feet and resting.",
