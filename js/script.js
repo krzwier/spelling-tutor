@@ -1,29 +1,29 @@
 /* SPELLING LISTS */
 
 const claireList = [
-   "proceed",
-   "introvert",
-   "deposit",
-   "obstacle",
-   "relocate",
-   "compose",
-   "pendant",
-   "diffuse",
-   "isolate",
-   "remedy"
+   "preposition",
+   "submarine",
+   "companion",
+   "international",
+   "percentage",
+   "triceratops",
+   "universal",
+   "triathlon",
+   "intramural",
+   "biennial"
 ];
 
 const claireReadingList = [
-   "Please proceed into the dungeon.",
-   "I like to hide in a cave all day because I am an introvert.",
-   "Please deposit five million dollars into my bank account. Thank you!",
-   "Fortunately, there is always an obstacle in Bob's plans to murder me.",
-   "I do not wish to relocate my to Panama.",
-   "Musicians can compose haunting melodies.",
-   "That is a beautiful pendant with semiprecious stones.",
-   "Many unpleasant scents diffuse around my home.",
-   "We sometimes need to isolate Paisley in her kennel.",
-   "What is the remedy for gangrene?"
+   "Proper grammar requires that you never end a sentence in a preposition.",
+   "The submarine dove down to a depth of 1000 meters.",
+   "Will you be my companion as I venture into this deep dark cave?",
+   "International flights are often several hours long.",
+   "What percentage of people have brown eyes?",
+   "The triceratops was a bully at his school and always threatened the little dinosaurs with his horns.",
+   "It is a universal rule that two plus two must always equal four.",
+   "He competed in a triathlon and won fourth place.",
+   "Does Holy Trinity have intramural sports?",
+   "They hold a biennial celebration in my hometown."
 ];
 
 const hannahList = [
