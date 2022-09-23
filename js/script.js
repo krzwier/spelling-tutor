@@ -109,9 +109,59 @@ const benReadingList = [
    "crow"
 ];
 
-const joshList = [];
+const joshList = [
+   "other",
+   "color",
+   "dollar",
+   "doctor",
+   "spider",
+   "sugar",
+   "brother",
+   "collar",
+   "favor",
+   "solar",
+   "sister",
+   "silver",
+   "weather",
+   "error",
+   "mother",
+   "flower",
+   "father",
+   "mirror",
+   "under",
+   "rumor",
+   "motor",
+   "tractor",
+   "grammar",
+   "harbor"
+];
 
-const joshReadingList = [];
+const joshReadingList = [
+   "other",
+   "color",
+   "dollar",
+   "doctor",
+   "spider",
+   "sugar",
+   "brother",
+   "collar",
+   "favor",
+   "solar",
+   "sister",
+   "silver",
+   "weather",
+   "error",
+   "mother",
+   "flower",
+   "father",
+   "mirror",
+   "under",
+   "rumor",
+   "motor",
+   "tractor",
+   "grammar",
+   "harbor"
+];
 
 /* GLOBAL VARIABLES AND FUNCTIONS */
 
