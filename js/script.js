@@ -109,59 +109,9 @@ const benReadingList = [
    "crow"
 ];
 
-const joshList = [
-   "cattle",
-   "model",
-   "final",
-   "pencil",
-   "level",
-   "April",
-   "total",
-   "marble",
-   "angel",
-   "novel",
-   "fossil",
-   "metal",
-   "pebble",
-   "nickel",
-   "oval",
-   "travel",
-   "special",
-   "vowel",
-   "signal",
-   "journal",
-   "angle",
-   "evil",
-   "until",
-   "local"
-];
+const joshList = [];
 
-const joshReadingList = [
-   "cattle",
-   "model",
-   "final",
-   "pencil",
-   "level",
-   "April",
-   "total",
-   "marble",
-   "angel",
-   "novel",
-   "fossil",
-   "metal",
-   "pebble",
-   "nickel",
-   "oval",
-   "travel",
-   "special",
-   "vowel",
-   "signal",
-   "journal",
-   "angle",
-   "evil",
-   "until",
-   "local"
-];
+const joshReadingList = [];
 
 /* GLOBAL VARIABLES AND FUNCTIONS */
 
