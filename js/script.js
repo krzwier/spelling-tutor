@@ -110,57 +110,57 @@ const benReadingList = [
 ];
 
 const joshList = [
-   "other",
-   "color",
-   "dollar",
-   "doctor",
-   "spider",
-   "sugar",
-   "brother",
-   "collar",
-   "favor",
-   "solar",
-   "sister",
-   "silver",
-   "weather",
-   "error",
-   "mother",
-   "flower",
-   "father",
-   "mirror",
-   "under",
-   "rumor",
-   "motor",
-   "tractor",
-   "grammar",
-   "harbor"
+   "disagree",
+   "misspell",
+   "preschool",
+   "mistreat",
+   "dislike",
+   "prefix",
+   "disable",
+   "premature",
+   "mismatch",
+   "preteen",
+   "misplace",
+   "discover",
+   "preview",
+   "dishonest",
+   "preheat",
+   "disloyal",
+   "misbehave",
+   "precious",
+   "discomfort",
+   "pretest",
+   "disobey",
+   "disappear",
+   "misjudge",
+   "precaution"
 ];
 
 const joshReadingList = [
-   "other",
-   "color",
-   "dollar",
-   "doctor",
-   "spider",
-   "sugar",
-   "brother",
-   "collar",
-   "favor",
-   "solar",
-   "sister",
-   "silver",
-   "weather",
-   "error",
-   "mother",
-   "flower",
-   "father",
-   "mirror",
-   "under",
-   "rumor",
-   "motor",
-   "tractor",
-   "grammar",
-   "harbor"
+   "disagree",
+   "misspell",
+   "preschool",
+   "mistreat",
+   "dislike",
+   "prefix",
+   "disable",
+   "premature",
+   "mismatch",
+   "preteen",
+   "misplace",
+   "discover",
+   "preview",
+   "dishonest",
+   "preheat",
+   "disloyal",
+   "misbehave",
+   "precious",
+   "discomfort",
+   "pretest",
+   "disobey",
+   "disappear",
+   "misjudge",
+   "precaution"
 ];
 
 /* GLOBAL VARIABLES AND FUNCTIONS */
@@ -172,9 +172,7 @@ let list = [];
 let readingList = [];
 
 const prettify = function (s) {
-   return (
-      s.charAt(0).toUpperCase() + s.toLowerCase().slice(1)
-   );
+   return s.charAt(0).toUpperCase() + s.toLowerCase().slice(1);
 };
 
 /* -----------------------------------------------
@@ -182,11 +180,8 @@ const prettify = function (s) {
 /* (+ related variables and functions)
 /* ----------------------------------------------- */
 
-const landingButton =
-   document.querySelector("#submit-name");
-const settingsButton = document.querySelector(
-   "#speech-settings"
-);
+const landingButton = document.querySelector("#submit-name");
+const settingsButton = document.querySelector("#speech-settings");
 const userName = document.querySelector("input");
 const landing = document.querySelector(".landing");
 const input = document.querySelector("input");
@@ -264,9 +259,7 @@ const getSadGif = async function () {
       "https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=disappointed&limit=25&offset=0&rating=pg&lang=en"
    );
    const list = await jsonFile.json();
-   const randomIndex = Math.floor(
-      Math.random() * list.data.length
-   );
+   const randomIndex = Math.floor(Math.random() * list.data.length);
    const gifArray = list.data;
    const gif = gifArray[randomIndex];
    let gifURL = "";
@@ -335,11 +328,7 @@ const getList = function () {
       // guess.style.textTransform = "none";
       list = [...joshList];
       readingList = [...joshReadingList];
-   } else if (
-      user === "BENJAMIN" ||
-      user === "BENJI" ||
-      user === "BEN"
-   ) {
+   } else if (user === "BENJAMIN" || user === "BENJI" || user === "BEN") {
       // guess.style.textTransform = "none";
       list = [...benList];
       readingList = [...benReadingList];
@@ -372,9 +361,7 @@ const getTskGif = async function () {
       "https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=tsk%20tsk&limit=25&offset=0&rating=g&lang=en"
    );
    const list = await jsonFile.json();
-   const randomIndex = Math.floor(
-      Math.random() * list.data.length
-   );
+   const randomIndex = Math.floor(Math.random() * list.data.length);
    const gifArray = list.data;
    const gif = gifArray[randomIndex];
    let gifURL = "";
@@ -417,9 +404,7 @@ const getPleaseGif = async function () {
       "https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=don%27t%20do%20it&limit=25&offset=0&rating=g&lang=en"
    );
    const list = await jsonFile.json();
-   const randomIndex = Math.floor(
-      Math.random() * list.data.length
-   );
+   const randomIndex = Math.floor(Math.random() * list.data.length);
    const gifArray = list.data;
    const gif = gifArray[randomIndex];
    let gifURL = "";
@@ -453,14 +438,10 @@ const speakWord = async function () {
    } else {
       if (list.length === totalWords) {
          getWord();
-         speak(
-            `Your first word is, ${currentWord}. ${currentSpokenWord}`
-         );
+         speak(`Your first word is, ${currentWord}. ${currentSpokenWord}`);
       } else if (list.length > 0) {
          getWord();
-         speak(
-            `The next word is, ${currentWord}. ${currentSpokenWord}`
-         );
+         speak(`The next word is, ${currentWord}. ${currentSpokenWord}`);
       } else {
          quiz.classList.add("hide");
          await getCongratsGif();
@@ -475,9 +456,7 @@ const getCongratsGif = async function () {
       "https://api.giphy.com/v1/gifs/search?api_key=kE4gNhEcUD14788jYqtDlFWJN6Tm5BAw&q=celebration&limit=25&offset=0&rating=g&lang=en"
    );
    const list = await jsonFile.json();
-   const randomIndex = Math.floor(
-      Math.random() * list.data.length
-   );
+   const randomIndex = Math.floor(Math.random() * list.data.length);
    const gifArray = list.data;
    const gif = gifArray[randomIndex];
    let gifURL = "";
@@ -486,15 +465,12 @@ const getCongratsGif = async function () {
    } else {
       gifURL = gif.images.original.url;
    }
-   const congratsImg =
-      document.querySelector(".congrats img");
+   const congratsImg = document.querySelector(".congrats img");
    congratsImg.src = gifURL;
 };
 
 const getWord = function () {
-   const randomIndex = Math.floor(
-      Math.random() * list.length
-   );
+   const randomIndex = Math.floor(Math.random() * list.length);
    const randomWord = list[randomIndex];
    const randomSpokenWord = readingList[randomIndex];
    list.splice(randomIndex, 1);
@@ -528,9 +504,7 @@ const checkGuess = async function () {
          guess.value = "";
          speak("Sorry, that's incorrect.  The letter");
          speak(currentSpokenWord);
-         speak(
-            "looks like this. Find it on the keyboard and press it!"
-         );
+         speak("looks like this. Find it on the keyboard and press it!");
          showLetter.textContent = currentWord.toUpperCase();
       }
    } else {
@@ -542,18 +516,14 @@ const checkGuess = async function () {
          speakWord();
       } else {
          const spelledOut = currentWord.split("");
-         speak(
-            `Sorry, that's incorrect.  The correct spelling of ${currentWord} is ...`
-         );
+         speak(`Sorry, that's incorrect.  The correct spelling of ${currentWord} is ...`);
          const saveRate = voiceRate;
          voiceRate = 0.8;
          for (var letter of spelledOut) {
             speak(letter);
          }
          voiceRate = saveRate;
-         speak(
-            `I'll put it back in your list to try again later.`
-         );
+         speak(`I'll put it back in your list to try again later.`);
          list.push(currentWord);
          readingList.push(currentSpokenWord);
          guess.value = "";
@@ -564,14 +534,10 @@ const checkGuess = async function () {
 
 const adjustProgress = function () {
    if (wordNum <= totalWords) {
-      meter.style.width = `${
-         ((wordNum - 1) / totalWords) * 100
-      }%`;
+      meter.style.width = `${((wordNum - 1) / totalWords) * 100}%`;
       numWords.innerText = `Word ${wordNum} of ${totalWords}`;
    } else {
-      meter.style.width = `${
-         ((wordNum - 1) / totalWords) * 100
-      }%`;
+      meter.style.width = `${((wordNum - 1) / totalWords) * 100}%`;
       numWords.innerText = `All done!`;
    }
 };
@@ -606,9 +572,7 @@ noClose.addEventListener("click", function () {
 /* ----------------------------------------------- */
 
 const congrats = document.querySelector(".congrats");
-const congratsX = document.querySelector(
-   ".congrats .modal-x"
-);
+const congratsX = document.querySelector(".congrats .modal-x");
 
 congratsX.addEventListener("click", function () {
    congrats.classList.add("hide");
@@ -622,9 +586,7 @@ congratsX.addEventListener("click", function () {
 /* ----------------------------------------------- */
 
 const settings = document.querySelector(".settings");
-const settingsX = document.querySelector(
-   ".settings .modal-x"
-);
+const settingsX = document.querySelector(".settings .modal-x");
 
 var voiceSelect = document.querySelector("select");
 
@@ -665,15 +627,11 @@ function populateVoiceList() {
          return v;
       }
    });
-   var selectedIndex =
-      voiceSelect.selectedIndex < 0
-         ? 0
-         : voiceSelect.selectedIndex;
+   var selectedIndex = voiceSelect.selectedIndex < 0 ? 0 : voiceSelect.selectedIndex;
    voiceSelect.innerHTML = "";
    for (i = 0; i < voices.length; i++) {
       var option = document.createElement("option");
-      option.textContent =
-         voices[i].name + " (" + voices[i].lang + ")";
+      option.textContent = voices[i].name + " (" + voices[i].lang + ")";
 
       if (voices[i].default) {
          option.textContent += " -- DEFAULT";
@@ -692,10 +650,7 @@ if (speechSynthesis.onvoiceschanged !== undefined) {
 
 const makeSpeechSample = function () {
    synth.cancel();
-   var selectedOption =
-      voiceSelect.selectedOptions[0].getAttribute(
-         "data-name"
-      );
+   var selectedOption = voiceSelect.selectedOptions[0].getAttribute("data-name");
    for (i = 0; i < voices.length; i++) {
       if (voices[i].name === selectedOption) {
          voice = voices[i];
@@ -705,9 +660,7 @@ const makeSpeechSample = function () {
    voicePitch = pitch.value;
    voiceRate = rate.value;
 
-   speak(
-      "Would you like me to speak to you in this voice?"
-   );
+   speak("Would you like me to speak to you in this voice?");
 };
 
 pitch.onchange = function () {
